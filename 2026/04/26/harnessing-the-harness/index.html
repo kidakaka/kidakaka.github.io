@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harnessing the Harness | The Big Fat Geek</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <a href="/" class="site-title">The Big Fat Geek</a>
+    <p class="site-tagline">Personal blog of Prasad Ajinkya</p>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/legal/">Legal</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <div class="post-header">
+        <h1>Harnessing the Harness</h1>
+        <div class="post-meta">26 April 2026 &nbsp;&middot;&nbsp; <span class="cats"><a href="/category/technology/">Technology</a></span></div>
+      </div>
+
+      <div class="post-body">
+        <p>There is a moment in every agentic AI project when you realise the model is not the hard part. The hard part is everything around it &#8212; the scaffolding that intercepts tool calls, routes decisions, handles failures, and keeps the whole thing from careening off the rails. That scaffolding has a name: the harness.</p>
+
+        <h2>What a Harness Actually Is</h2>
+        <p>In traditional software testing, a harness is the infrastructure that surrounds a unit of code to control its inputs and observe its outputs. In agentic AI flows, the metaphor transfers almost perfectly. A harness wraps an agent &#8212; or a network of agents &#8212; providing the layer of structure that the model itself cannot supply.</p>
+        <p>A harness is not a prompt. It is not a system instruction. It is executable infrastructure: event listeners, shell hooks, state managers, retry logic, and routing rules. Where the model generates outputs, the harness decides what to do with them.</p>
+
+        <h2>The Hook as the Harness&#8217;s Atom</h2>
+        <p>The most granular component of a harness is the hook &#8212; a shell command or script that fires in response to a specific event. In Claude Code, hooks can execute before a tool is called, after a tool completes, when a session starts, or when a turn ends. Each hook has access to context: the tool name, the arguments, the output, the conversation so far.</p>
+        <p>This is a small surface area with significant power. A hook can log every file edit for audit purposes. It can block destructive commands before they execute. It can call an external service to validate a proposed action. It can inject additional context into the conversation based on what the model just did. The hook is where the harness does its most precise work.</p>
+
+        <h2>Routing Between Agents</h2>
+        <p>In multi-agent systems &#8212; where a supervisor spawns workers, or a planner delegates to specialists &#8212; the harness takes on a routing function. When an agent produces an output, something has to decide what happens next: does the output go to another agent? Does it require human review? Does it trigger a tool call? Does it end the flow?</p>
+        <p>Without a harness, this routing logic ends up embedded in prompts, which is fragile. The model is asked to decide not just what to do but how to hand off control, how to format results for downstream consumers, and how to handle ambiguity in the task boundary. Harnesses move that logic out of the model and into code, where it is testable, observable, and correctable without touching a single prompt.</p>
+
+        <h2>State, Memory, and the Boundary Problem</h2>
+        <p>Agentic flows have a boundary problem: the model has a context window; the task does not. A harness manages the mismatch. It decides what to load into context at each step, what to summarise, what to offload to external memory, and when to start a new session versus continue an existing one.</p>
+        <p>This is not trivial. Load too much and you exhaust the window. Load too little and the model lacks the context to make good decisions. The harness&#8217;s memory layer &#8212; whether it uses a vector store, a structured database, or a simple key-value file &#8212; is what gives an agentic system the appearance of continuity across turns and sessions.</p>
+
+        <h2>Failure Handling Is the Real Test</h2>
+        <p>The quality of a harness is most visible when things go wrong. Models hallucinate. Tools return errors. External APIs time out. The agent pursues a valid-looking but wrong approach for seventeen steps before hitting a dead end. A harness that only works on the happy path is not a harness; it is a demo.</p>
+        <p>Good harnesses define explicit failure modes. They distinguish between errors that should trigger a retry, errors that should escalate to a human, and errors that should abort the task and return a clean failure signal. They log enough state that a human can understand what the agent was doing when things broke. They do not let the model silently swallow errors and continue as if nothing happened.</p>
+
+        <h2>Observability as a First-Class Feature</h2>
+        <p>Running an agentic flow without observability is like debugging by rereading source code. You need to see what the model decided, what tools it called, in what order, with what arguments, and what came back. A harness that instruments every step &#8212; writing structured logs, capturing tool inputs and outputs, recording decision points &#8212; turns a black box into something you can reason about.</p>
+        <p>This matters for improvement as much as debugging. If you can replay a run and see exactly where the agent made a suboptimal decision, you can design a targeted fix: a better prompt, a smarter hook, a different routing rule, or an additional constraint. Without observability, you are guessing.</p>
+
+        <h2>The Balance of Control</h2>
+        <p>There is a tension at the heart of harness design. Too loose and the agent does whatever it wants, which is occasionally brilliant and occasionally catastrophic. Too tight and you have essentially written the logic yourself, with the model acting as an expensive regex. The harness has to hold the agent firmly enough to be safe and loosely enough to be useful.</p>
+        <p>That balance shifts depending on the task. For customer-facing automation, the harness should be tight: strict tool whitelists, human approval gates for high-stakes actions, conservative retry limits. For internal research tasks, it can be looser: broader tool access, longer runs, more tolerance for exploratory dead ends.</p>
+        <p>Getting the balance right is not a one-time decision. It is an ongoing calibration as you observe what the agent actually does in production, what goes wrong, and what constraints are helping versus getting in the way. The harness is a living piece of infrastructure, not a configuration file you write once and forget.</p>
+
+        <h2>Where to Start</h2>
+        <p>If you are building agentic flows for the first time, start with the simplest possible harness: a single hook that logs every tool call to a file. Run your agent. Read the log. You will immediately see patterns &#8212; where it gets stuck, what it retries unnecessarily, what context it keeps asking for. That log is your first harness insight, and it will tell you exactly what to build next.</p>
+        <p>The model is impressive. But the harness is what makes it reliable.</p>
+      </div>
+
+      <nav class="post-nav">
+        <a class="nav-prev" href="/2026/03/07/your-ai-dream-team-mastering-agentic-publishing-with-claude/">&larr; Your AI Dream Team: Mastering Agentic Publishing with Claude</a>
+      </nav>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-social">
+      <a href="https://x.com/kidakaka">X / Twitter</a>
+      <a href="https://instagram.com/kidakaka">Instagram</a>
+      <a href="https://facebook.com/kidakaka">Facebook</a>
+    </div>
+    <div>&copy; Prasad Ajinkya &nbsp;&middot;&nbsp; <a href="/legal/">Legal</a></div>
+  </footer>
+</div>
+</body>
+</html>
