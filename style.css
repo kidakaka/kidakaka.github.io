@@ -102,6 +102,13 @@ nav a:hover { color: #111; }
 }
 
 /* ---- Single post ---- */
+.post-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 28px;
+}
+
 .post-header { margin-bottom: 36px; }
 
 .post-header h1 {
