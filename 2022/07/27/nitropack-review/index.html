@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nitropack Review | The Big Fat Geek</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <a href="/" class="site-title">The Big Fat Geek</a>
+    <p class="site-tagline">Personal blog of Prasad Ajinkya</p>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/legal/">Legal</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <div class="post-header">
+        <h1>Nitropack Review</h1>
+        <div class="post-meta">27 July 2022 &nbsp;&middot;&nbsp; <span class="cats"><a href="/category/web/">Web</a>, <a href="/category/technology/">Technology</a></span></div>
+      </div>
+
+      <div class="post-body">
+        <p>Those managing content management systems face a persistent challenge: improving site loading speed without adding complexity. Solutions range from server-side opcache modules to WordPress-specific tools like WP-Supercache. For non-technical webmasters, picking the right approach is genuinely difficult.</p>
+
+        <h2>The Problem with Small Instances</h2>
+        <p>My pages run on a 512 MB droplet. As traffic grows, limited resources become problematic &#8212; response times increase for all visitors. WordPress installations that run databases on the same server can experience MySQL errors when Apache processes consume excessive memory, forcing the system to terminate other processes.</p>
+
+        <h2>Caching to the Rescue</h2>
+        <p>Server-side caching addresses these issues by serving pre-rendered static HTML instead of executing PHP on every request. WP-Supercache works adequately as a plugin, but PHP still executes. Caching at the Apache or Nginx level is more effective but requires technical expertise and complicates cache management.</p>
+
+        <h2>Cloud-Based Reverse Proxies</h2>
+        <p>Reverse proxy servers sit between the web server and clients, forwarding requests and caching responses. Cloud-based versions operate as separate hosted services rather than on-premises infrastructure. I tried Cloudflare without much satisfaction, and explored Indian providers with similar results.</p>
+
+        <h2>Nitropack</h2>
+        <p>A colleague recommended Nitropack. The WordPress plugin installation was straightforward, and Nitropack&#8217;s Cloudflare integration simplified DNS configuration. Even on the free plan, I observed substantial improvements in server response times and web performance metrics.</p>
+
+        <p>For site owners who want meaningful performance improvement without deep server administration knowledge, Nitropack is worth trying.</p>
+      </div>
+
+      <nav class="post-nav">
+        <a class="nav-prev" href="/2022/12/22/why-chatgpt-is-going-to-change-inbound-marketing/">&larr; Why ChatGPT is Going to Change Inbound Marketing</a>
+        <a class="nav-next" href="/2021/03/19/getting-started-with-r/">Getting Started with R &rarr;</a>
+      </nav>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-social">
+      <a href="https://x.com/kidakaka">X / Twitter</a>
+      <a href="https://instagram.com/kidakaka">Instagram</a>
+      <a href="https://facebook.com/kidakaka">Facebook</a>
+    </div>
+    <div>&copy; Prasad Ajinkya &nbsp;&middot;&nbsp; <a href="/legal/">Legal</a></div>
+  </footer>
+</div>
+</body>
+</html>

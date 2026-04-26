@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building Your Custom Connector on Google Data Studio | The Big Fat Geek</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <a href="/" class="site-title">The Big Fat Geek</a>
+    <p class="site-tagline">Personal blog of Prasad Ajinkya</p>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/legal/">Legal</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <div class="post-header">
+        <h1>Building Your Custom Connector on Google Data Studio</h1>
+        <div class="post-meta">29 August 2020 &nbsp;&middot;&nbsp; <span class="cats"><a href="/category/analytics/">Analytics</a>, <a href="/category/web/">Web</a></span></div>
+      </div>
+
+      <div class="post-body">
+        <p><em>This is a technical post. Comfort with code &#8212; specifically JavaScript and Google App Scripts &#8212; is assumed.</em></p>
+
+        <p>Google Data Studio&#8217;s most powerful feature is the ability to create custom data connectors to access proprietary datasets. Consider a marketing research associate who wants to present findings: Google Sheets works with built-in connectors for small datasets, but custom connectors become necessary when data is too large, stored in databases, or available only via APIs.</p>
+
+        <h2>Community Connector Sections</h2>
+        <p>Each connector comprises four sections:</p>
+        <ul>
+          <li><strong>Configuration</strong> &#8212; collects metadata and user inputs like API credentials</li>
+          <li><strong>Authentication</strong> &#8212; authorises the script, supporting OAuth2</li>
+          <li><strong>Schema</strong> &#8212; defines the data structure, fields, data types, and aggregation options</li>
+          <li><strong>Data</strong> &#8212; fetches and validates data, enabling last-minute transformations before display</li>
+        </ul>
+
+        <h2>Required Functions</h2>
+        <p>Developers must implement four essential functions:</p>
+        <ul>
+          <li><strong>getConfig()</strong> &#8212; returns configurable user options presented during connector setup</li>
+          <li><strong>getAuthType()</strong> &#8212; checks and declares authentication requirements</li>
+          <li><strong>getSchema()</strong> &#8212; returns the data structure definition</li>
+          <li><strong>getData()</strong> &#8212; accesses and formats the actual data for display</li>
+        </ul>
+
+        <h2>Best Practices</h2>
+        <p>Write separate functions for data fetching and post-processing &#8212; it makes debugging much easier. Google&#8217;s official documentation and the GitHub sample code are the best starting references. After deployment, the connector can be added to any Data Studio account and shared with teams.</p>
+
+        <p>The first connector always takes longer than expected. The second one takes a fraction of the time.</p>
+      </div>
+
+      <nav class="post-nav">
+        <a class="nav-prev" href="/2021/03/19/getting-started-with-r/">&larr; Getting Started with R</a>
+        <a class="nav-next" href="/2020/08/29/reduction-in-stamp-duty-rates/">Reduction in Stamp Duty Rates &rarr;</a>
+      </nav>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-social">
+      <a href="https://x.com/kidakaka">X / Twitter</a>
+      <a href="https://instagram.com/kidakaka">Instagram</a>
+      <a href="https://facebook.com/kidakaka">Facebook</a>
+    </div>
+    <div>&copy; Prasad Ajinkya &nbsp;&middot;&nbsp; <a href="/legal/">Legal</a></div>
+  </footer>
+</div>
+</body>
+</html>

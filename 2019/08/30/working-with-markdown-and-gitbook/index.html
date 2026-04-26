@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Working with Markdown and GitBook | The Big Fat Geek</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <a href="/" class="site-title">The Big Fat Geek</a>
+    <p class="site-tagline">Personal blog of Prasad Ajinkya</p>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/legal/">Legal</a>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <div class="post-header">
+        <h1>Working with Markdown and GitBook</h1>
+        <div class="post-meta">30 August 2019 &nbsp;&middot;&nbsp; <span class="cats"><a href="/category/work/">Work</a>, <a href="/category/technology/">Technology</a></span></div>
+      </div>
+      <div class="post-body">
+        <p>When I transitioned to leading the tech team at Homeville, the challenge of managing documentation across multiple microservices became immediately apparent. Different repositories, different languages, different hosting environments &#8212; and no single place where a new developer could get oriented quickly.</p>
+        <h2>Starting with README Files</h2>
+        <p>I started using README.md files as entry points for each service, written from the perspective of helping a new developer understand what each service does and how to get it running. This required learning Markdown &#8212; a super lightweight language that allows one to quickly convert text into rich formatted documents like HTML or PDF. Simpler than a word processor, more useful than plain text.</p>
+        <h2>From Individual Files to GitBook</h2>
+        <p>As standalone README files accumulated, the need for a consolidated documentation site became clear. Drawing on experience from the WordPress India community, which used GitBook to aggregate multiple Markdown files into cohesive documentation sites, I applied the same approach to our microservices.</p>
+        <p>GitBook is available as a CLI tool via npm. It transforms a collection of Markdown files into an organised, navigable developer website.</p>
+        <h2>Getting Started</h2>
+        <ol>
+          <li>Install gitbook-cli from npm: <code>npm install -g gitbook-cli</code></li>
+          <li>Run <code>gitbook init</code> in a new folder</li>
+          <li>Execute <code>gitbook serve</code> to preview at localhost:4000</li>
+        </ol>
+        <h2>Key Concepts</h2>
+        <ul>
+          <li><strong>SUMMARY.md</strong> controls sidebar navigation</li>
+          <li><strong>book.json</strong> enables customisation and plugins</li>
+          <li>Organise services in subfolders for clarity</li>
+          <li>Maintain a CHANGELOG.md for version history</li>
+          <li>Run <code>gitbook build</code> to generate static files for hosting</li>
+        </ul>
+        <p>Documentation written close to the code gets updated. Documentation written far from the code gets forgotten.</p>
+      </div>
+      <nav class="post-nav">
+        <a class="nav-prev" href="/2020/04/02/work-from-home-the-new-norm/">&larr; Work from Home: The New Norm</a>
+        <a class="nav-next" href="/2019/06/19/data-reporting-and-doing-whats-right/">Data, Reporting and Doing What&#8217;s Right &rarr;</a>
+      </nav>
+    </article>
+  </main>
+  <footer>
+    <div class="footer-social">
+      <a href="https://x.com/kidakaka">X / Twitter</a>
+      <a href="https://instagram.com/kidakaka">Instagram</a>
+      <a href="https://facebook.com/kidakaka">Facebook</a>
+    </div>
+    <div>&copy; Prasad Ajinkya &nbsp;&middot;&nbsp; <a href="/legal/">Legal</a></div>
+  </footer>
+</div>
+</body>
+</html>

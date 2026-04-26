@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding the __utmz Google Analytics Cookie | The Big Fat Geek</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <a href="/" class="site-title">The Big Fat Geek</a>
+    <p class="site-tagline">Personal blog of Prasad Ajinkya</p>
+    <nav><a href="/">Home</a><a href="/articles/">Articles</a><a href="/legal/">Legal</a></nav>
+  </header>
+  <main>
+    <article>
+      <div class="post-header">
+        <h1>Understanding the __utmz Google Analytics Cookie</h1>
+        <div class="post-meta">6 January 2013 &nbsp;&middot;&nbsp; <span class="cats"><a href="/category/technology/">Technology</a>, <a href="/category/analytics/">Analytics</a></span></div>
+      </div>
+      <div class="post-body">
+        <p>The <code>__utmz</code> cookie is the Google Analytics traffic source cookie. It stores information about where a visitor came from &#8212; the source, medium, campaign, and keyword that brought them to your site. Understanding what it contains and how to read it is essential for anyone doing serious web analytics work.</p>
+        <h2>What the Cookie Stores</h2>
+        <p>The <code>__utmz</code> cookie value looks intimidating but follows a consistent structure. A typical value looks something like this:</p>
+        <p><code>123456789.1234567890.1.1.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=keyword</code></p>
+        <p>Breaking this down:</p>
+        <ul>
+          <li><strong>Domain hash</strong> &#8212; a numeric hash of the domain</li>
+          <li><strong>Timestamp</strong> &#8212; when the cookie was set (Unix timestamp)</li>
+          <li><strong>Session count</strong> &#8212; how many sessions this visitor has had</li>
+          <li><strong>Campaign count</strong> &#8212; how many campaigns have driven this visitor</li>
+          <li><strong>utmcsr</strong> &#8212; campaign source (e.g., google, newsletter)</li>
+          <li><strong>utmccn</strong> &#8212; campaign name</li>
+          <li><strong>utmcmd</strong> &#8212; campaign medium (e.g., organic, cpc, email)</li>
+          <li><strong>utmctr</strong> &#8212; campaign term (keyword, for search traffic)</li>
+          <li><strong>utmcct</strong> &#8212; campaign content (for A/B testing differentiation)</li>
+        </ul>
+        <h2>Why It Matters</h2>
+        <p>The <code>__utmz</code> cookie persists for six months and is updated each time a visitor arrives from a new source. This means Google Analytics uses last-touch attribution by default &#8212; the most recent traffic source gets credit for a conversion.</p>
+        <p>Understanding this helps explain discrepancies between what Analytics reports and what you might expect. If a visitor arrives via organic search, returns directly two weeks later, and converts &#8212; the organic visit gets credit, not the direct visit, because the cookie retains the original source.</p>
+        <h2>Reading the Cookie Programmatically</h2>
+        <p>You can read the <code>__utmz</code> cookie value using JavaScript and parse the pipe-delimited key-value pairs to pass attribution data to your own systems. This is useful when you want to record traffic source alongside form submissions or other conversion events in a database that is separate from Analytics.</p>
+        <p>Note that this cookie is part of the older Universal Analytics (ga.js / analytics.js) implementation. Google Analytics 4 uses a different cookie structure, though the underlying attribution concepts remain similar.</p>
+      </div>
+      <nav class="post-nav">
+        <a class="nav-prev" href="/2015/12/14/the-mahabharata-quest-the-alexander-secret/">&larr; The Mahabharata Quest: The Alexander Secret</a>
+        <a class="nav-next" href="/2008/04/11/i-am-sapped/">I Am Sapped &rarr;</a>
+      </nav>
+    </article>
+  </main>
+  <footer>
+    <div class="footer-social"><a href="https://x.com/kidakaka">X / Twitter</a><a href="https://instagram.com/kidakaka">Instagram</a><a href="https://facebook.com/kidakaka">Facebook</a></div>
+    <div>&copy; Prasad Ajinkya &nbsp;&middot;&nbsp; <a href="/legal/">Legal</a></div>
+  </footer>
+</div>
+</body>
+</html>

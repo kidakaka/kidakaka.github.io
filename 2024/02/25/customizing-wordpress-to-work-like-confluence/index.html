@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customizing WordPress to Work Like Confluence | The Big Fat Geek</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <a href="/" class="site-title">The Big Fat Geek</a>
+    <p class="site-tagline">Personal blog of Prasad Ajinkya</p>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/legal/">Legal</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <div class="post-header">
+        <h1>Customizing WordPress to Work Like Confluence</h1>
+        <div class="post-meta">25 February 2024 &nbsp;&middot;&nbsp; <span class="cats"><a href="/category/web/">Web</a>, <a href="/category/work/">Work</a></span></div>
+      </div>
+
+      <div class="post-body">
+        <p>At Homeville, when the technology team expanded from 4 to 65+ members, licensing costs for JIRA and Confluence became unsustainable. JIRA charged approximately $400 USD monthly beyond the first 10 users, while Confluence&#8217;s expenses were rivalling our AWS bills.</p>
+
+        <h2>Shifting from Atlassian</h2>
+        <p>We transitioned to OpenProject, an open-source self-hosted alternative. This move provided security benefits by keeping proprietary data within our own AWS infrastructure, and improved regulatory compliance through local hosting. A Python scripting effort migrated projects, tickets, and sprint information from JIRA to OpenProject.</p>
+
+        <h2>WordPress as Internal Wiki</h2>
+        <p>Rather than continuing with Confluence, we opted for self-hosted WordPress with extensive customisations. Here&#8217;s what we built.</p>
+
+        <p><strong>Custom Taxonomies.</strong> We implemented PODs to quickly add custom post types and taxonomies, enabling separate organisation of credit platforms, systems, and documentation areas.</p>
+
+        <p><strong>Authorisation and Access.</strong> Integration with Microsoft 365 allowed Active Directory authentication, eliminating manual user provisioning. A membership plugin restricted content access by team. We disabled the REST API to prevent unauthorised data exposure and used AWS NACL rules to prevent off-premises access entirely.</p>
+
+        <p><strong>Integration with OpenProject.</strong> Custom plugin development created shortcodes that pulled OpenProject sprint data, enabling teams to generate release notes with sprint backlog links directly within WordPress posts.</p>
+
+        <p><strong>Document Templates.</strong> We replicated Confluence templates using WordPress&#8217;s block editor, making it straightforward for teams to create consistent documentation and preserving temporal records of product decisions.</p>
+
+        <h2>The Result</h2>
+        <p>The total licensing cost reduction was significant. More importantly, everything &#8212; documentation, sprint planning, release notes &#8212; lived inside our own infrastructure. For a fintech company handling sensitive data, that matters as much as the cost saving.</p>
+      </div>
+
+      <nav class="post-nav">
+        <a class="nav-prev" href="/2024/03/04/playing-skyrim-with-mods-after-a-decade/">&larr; Playing Skyrim with Mods After a Decade</a>
+        <a class="nav-next" href="/2023/12/16/wordcamp-ahmedabad-2023/">WordCamp Ahmedabad 2023 &rarr;</a>
+      </nav>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-social">
+      <a href="https://x.com/kidakaka">X / Twitter</a>
+      <a href="https://instagram.com/kidakaka">Instagram</a>
+      <a href="https://facebook.com/kidakaka">Facebook</a>
+    </div>
+    <div>&copy; Prasad Ajinkya &nbsp;&middot;&nbsp; <a href="/legal/">Legal</a></div>
+  </footer>
+</div>
+</body>
+</html>
