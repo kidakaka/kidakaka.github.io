@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Git-Backed Brain: Using a Repo as Shared Agent Memory | The Big Fat Geek</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <a href="/" class="site-title">The Big Fat Geek</a>
+    <p class="site-tagline">Personal blog of Prasad Ajinkya</p>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/legal/">Legal</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <div class="post-header">
+        <h1>The Git-Backed Brain: Using a Repo as Shared Agent Memory</h1>
+        <div class="post-meta">31 May 2026 &nbsp;&middot;&nbsp; <span class="cats"><a href="/category/technology/">Technology</a>, <a href="/category/work/">Work</a></span></div>
+      </div>
+
+      <div class="post-body">
+        <p>If you&#8217;re using multiple AI agents to get work done, you quickly run into a context fragmentation problem. I might use Claude Desktop to brainstorm a compliance framework, switch to Claude Code in the terminal to refactor some Python, and then spin up Google&#8217;s Antigravity to build out a new React component. Each agent is brilliant in its silo, but they don&#8217;t talk to each other.</p>
+
+        <p>In a startup &#8212; especially one dealing with the intricacies of Indian fintech and banking regulations &#8212; context is everything. If the agent writing the code doesn&#8217;t remember the regulatory constraints we discussed yesterday, we&#8217;re building the wrong thing.</p>
+
+        <p>The solution isn&#8217;t a complex vector database or a proprietary memory layer. The solution is already sitting on our machines: a simple GitHub repository.</p>
+
+        <h2>The Repo as a Shared Brain</h2>
+        <p>Instead of relying on application-specific memory, I now use a dedicated GitHub repository as the common memory layer for all my AI agents. It&#8217;s essentially a structured knowledge base containing architecture decision records (ADRs), prompt libraries, workflow harnesses, and active project context.</p>
+
+        <p>Because it&#8217;s just a folder of Markdown files on my local machine, every agent can read it. Antigravity can parse the <code>.md</code> files to understand the data model before it starts coding. Claude Code can check the <code>decisions/</code> directory to see why we chose a specific authentication flow. Claude Desktop can ingest the whole repository to act as a sounding board for new features.</p>
+
+        <h2>How the Flow Works</h2>
+        <p>In practice, my day-to-day workflow looks like this:</p>
+        <ol>
+          <li><strong>The Brainstorm (Claude Desktop):</strong> I&#8217;ll start by mapping out a problem &#8212; say, handling tokenization requirements for a new lending product. We&#8217;ll work through the logic, and I&#8217;ll ask Claude to summarise the final approach into a structured Markdown document. I save this file directly into the memory repo.</li>
+          <li><strong>The Implementation (Antigravity):</strong> When I move to my IDE, I point Antigravity to the project repo, but I also give it access to the memory repo. The prompt is simple: "Read the tokenization specs in the memory repo and implement the core classes." It has exactly the same context Claude Desktop had.</li>
+          <li><strong>The Refactor (Claude Code):</strong> Later, if I need to quickly refactor or debug from the terminal, Claude Code can reference the same files. If it makes a structural change, I ask it to update the documentation in the memory repo.</li>
+        </ol>
+
+        <h2>Version-Controlled Thought</h2>
+        <p>The real magic of using a Git repository is version control. Agent memory isn&#8217;t static; it evolves. By committing changes to the memory repo, I get a literal history of thought. I can see exactly when we decided to pivot a feature or change a data structure.</p>
+
+        <p>This setup effectively creates a unified &#8220;shadow board of directors&#8221; that spans multiple tools. It doesn&#8217;t matter which interface I&#8217;m using on any given Tuesday morning; the underlying intelligence is drawing from a single, verifiable, version-controlled source of truth.</p>
+
+        <p>Sometimes the best tool for cutting-edge AI isn&#8217;t more AI. It&#8217;s just Git.</p>
+      </div>
+
+      <nav class="post-nav">
+        <a class="nav-prev" href="/2026/04/26/harnessing-the-harness/">&larr; Harnessing the Harness</a>
+      </nav>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-social">
+      <a href="https://x.com/kidakaka">X / Twitter</a>
+      <a href="https://instagram.com/kidakaka">Instagram</a>
+      <a href="https://facebook.com/kidakaka">Facebook</a>
+    </div>
+    <div>&copy; Prasad Ajinkya &nbsp;&middot;&nbsp; <a href="/legal/">Legal</a></div>
+  </footer>
+</div>
+</body>
+</html>
