@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Built an AI "Second Opinion" System for My Own Health — Here's How It Works | The Big Fat Geek</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <a href="/" class="site-title">The Big Fat Geek</a>
+    <p class="site-tagline">Personal blog of Prasad Ajinkya</p>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/legal/">Legal</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <div class="post-header">
+        <h1>I Built an AI "Second Opinion" System for My Own Health — Here's How It Works</h1>
+        <div class="post-meta">8 June 2026 &nbsp;&middot;&nbsp; <span class="cats"><a href="/category/technology/">Technology</a>, <a href="/category/health/">Health</a></span></div>
+      </div>
+
+      <div class="post-body">
+        <p>I'm a 45-year-old engineer living in Mumbai. I have hypothyroidism. I'm managing borderline HbA1c. I try and walk every morning at (preferably at Worli Seaface), track my heart rate zones on a Fitbit, and log everything obsessively.</p>
+        
+        <p>And somewhere along the way, I got tired of walking out of a doctor's appointment wondering: <em>Is this the right call? Is there something newer? Did he check everything?</em></p>
+        
+        <p>So I built a system.</p>
+
+        <h2>The Problem: Rushed Doctors, Complex Conditions</h2>
+        
+        <p>Indian healthcare is outstanding in many ways — specialists are accessible, costs are manageable, labs are fast. But the system is stretched. A good endocrinologist in Mumbai sees 60 patients a day. Your 15-minute slot is not enough time for them to cross-check the latest ADA guidelines on your HbA1c trend, verify your supplement timing against thyroid absorption windows, <em>and</em> ask about your heart rate variability during last month's walks.</p>
+        
+        <p>The gaps aren't malicious. They're structural.</p>
+        
+        <p>My setup is designed to fill them.</p>
+
+        <h2>The Architecture: A Three-Tier Intelligence Stack</h2>
+        
+        <p>I think of the system as three concentric rings of truth.</p>
+
+        <h3>Tier 1 — My Own Data (The Ground Truth)</h3>
+        
+        <p>Everything starts with what's actually happening in my body:</p>
+        
+        <ul>
+          <li><strong>Lab reports</strong> going back to 2022: TSH, HbA1c, Vitamin D, CBC, lipid panels — all stored as PDFs in a project folder</li>
+          <li><strong>Medication tracker</strong>: An Excel file logging every supplement, every dosage, every timing window</li>
+          <li><strong>Fitness data</strong>: A weekly walk tracker fed from Fitbit, capturing heart rate zones (Z1–Z5), session duration, and average HR per session</li>
+          <li><strong>Medical history</strong>: A master profile document synthesizing conditions, timelines, and prior physician notes</li>
+        </ul>
+
+        <p>This is the data no AI can hallucinate around. If the TSH was 6.36 in December and 5.37 in January, that's the number. We start there.</p>
+
+        <h3>Tier 2 — Global Evidence-Based Medicine (The Quality Bar)</h3>
+        
+        <p>The AI persona I've configured acts as a <strong>Senior Clinical Research Associate</strong>. Its job is to cross-reference my local treatment plan against:</p>
+        
+        <ul>
+          <li><strong>Mayo Clinic</strong> guidelines</li>
+          <li><strong>NHS (UK)</strong> clinical protocols</li>
+          <li><strong>ACC/AHA</strong> (cardiology) standards</li>
+          <li><strong>ADA</strong> (American Diabetes Association) guidelines</li>
+        </ul>
+
+        <p>The key instruction is direct: <em>"Assume local practitioners may be rushed or may overlook the latest international protocols."</em> That's not cynicism — it's epistemic hygiene. It forces the system to actively look for gaps rather than assume the prescription is optimal.</p>
+
+        <h3>Tier 3 — Indian Clinical Context (The Localizer)</h3>
+        
+        <p>The system is aware of the Indian context: local drug brand names (Supradin, Folwhite, Neurobion Forte), ICMR reference ranges, the reality of supplement stacking in Indian polypharmacy, seasonal considerations like Mumbai's May heat affecting cardiac readings. Tier 3 contextualizes without overriding Tier 2.</p>
+
+        <h2>What the System Actually Does</h2>
+        
+        <p>Every time I have a new prescription, a new lab result, or a new symptom, I run it through a structured protocol.</p>
+
+        <h3>1. Gap Analysis</h3>
+        
+        <p>The first question is always: <em>What's missing or suboptimal?</em></p>
+        
+        <p>An example from my own case: I was taking Supradin (which contains calcium, magnesium, and zinc) and my levothyroxine at the same time every morning. No one flagged this as a problem. The system did — because thyroid medication is chelated by divalent minerals, reducing absorption by up to 40%. The fix was moving all mineral-containing supplements to post-dinner. My TSH improved at the next test.</p>
+        
+        <p>That's the gap analysis working. Not because any doctor was incompetent. Because no one had the bandwidth to cross-check the supplement timing literature.</p>
+
+        <h3>2. Physician's Brief</h3>
+        
+        <p>The output is structured as a <strong>"For My Review"</strong> section — plain language, no medical jargon spirals. The goal is to walk into my next appointment with 3–5 precise questions, not a vague feeling that something is off.</p>
+        
+        <p>Sample questions the system might surface:</p>
+        <ul>
+          <li><em>"My HbA1c is at 6.5 — right on the ADA diagnostic threshold. What is your target for me specifically, and what is your intervention threshold?"</em></li>
+          <li><em>"Given my levothyroxine, what is your TSH treatment target range — and why?"</em></li>
+          <li><em>"I'm doing Zone 2/Z3 aerobic training. Should we establish a cardiac baseline before I increase resistance training volume?"</em></li>
+        </ul>
+
+        <p>These are not adversarial. They're precision instruments for a 15-minute conversation.</p>
+
+        <h3>3. Differential Diagnosis Checklist</h3>
+        
+        <p>If I present with a symptom, the system generates a differential — <em>what else could this be?</em> This is a direct counter to <strong>anchoring bias</strong>, the clinical phenomenon where a doctor fixes on the first plausible diagnosis and stops looking.</p>
+        
+        <p>My hypothyroidism is well-documented. That makes it a convenient anchor. But low Hb (12.9 vs. reference 14–18), combined with fatigue and low iron, could also point to iron-deficiency anemia as a <em>co-existing</em> condition — not explained away by the thyroid label.</p>
+        
+        <p>The differential checklist forces the question: <em>Have we actually ruled everything else out?</em></p>
+
+        <h3>4. Drug Interaction &amp; Side-Effect Watch</h3>
+        
+        <p>Every new medication or supplement gets automatically cross-checked against my full medication list. The B6 accumulation issue is a good example here: I was taking Neurobion Forte, Supradin, and Folwhite simultaneously — all containing B6. The combined dose was approaching chronic toxicity thresholds. No single prescription was the problem. The <em>combination</em> was.</p>
+
+        <h2>The Memory Infrastructure</h2>
+        
+        <p>The clinical intelligence layer sits on top of a <strong>personal memory system</strong> — because health data without context is just noise.</p>
+
+        <h3>Manthan (Active Project Memory)</h3>
+        
+        <p>My GitHub repo at <code>kidakaka/manthan</code> is the execution layer. It contains:</p>
+        
+        <pre><code>context/health/          &larr; Active health state, supplement protocols, lab summaries
+observability/sessions/  &larr; Timestamped logs of every analysis session
+prompts/                 &larr; Reusable clinical analysis prompt templates
+harnesses/               &larr; Workflow configs and orchestration scripts</code></pre>
+        
+        <p>Every significant health analysis session gets logged as a distributed tracing JSON — trace ID, span ID, latency, status. The same observability patterns I use for software systems, applied to my health workflow.</p>
+
+        <h2>The Fitness Layer</h2>
+        
+        <p>Health isn't just labs and medications. The Fitbit integration feeds a weekly walk tracker (<code>Prasad_Weekly_Walk_Tracker.xlsx</code>) that logs:</p>
+        
+        <ul>
+          <li>Heart rate zone distribution per session (Z1–Z5)</li>
+          <li>Average and max HR</li>
+          <li>Session timestamps and weather context (Mumbai heat in May pushes minimum HR up 8–10 bpm — that's physiological, not cardiac)</li>
+        </ul>
+        
+        <p>The system tracks zone discipline over time. May 2026: 6 sessions, all Z2/Z3, zero Z4 flags. That's the aerobic base-building phase working. When Phase 2 (increased resistance training) begins, the baseline is documented. No guessing.</p>
+
+        <h2>The Philosophy: You Are Your Own Primary Investigator</h2>
+        
+        <p>The system doesn't replace my doctor. It makes me a better patient.</p>
+        
+        <p>There's a concept in clinical trials called the <strong>Principal Investigator</strong> — the person ultimately responsible for the protocol, for catching protocol deviations, for asking hard questions of the data. In most people's healthcare, that role is vacant. The doctor is responsible for their 15 minutes with you. The pharmacist is responsible for the prescription. No one is responsible for the <em>whole picture</em> over time.</p>
+        
+        <p>I've filled that role myself, with AI as a research associate.</p>
+        
+        <p>The key principles:</p>
+        
+        <ol>
+          <li><strong>Source hierarchy matters.</strong> Your own data first. Global EBM second. Local context third. Never reverse this.</li>
+          <li><strong>Separation of timing is a drug interaction.</strong> Supplement stacking in India is common and often undertreated as a clinical variable.</li>
+          <li><strong>Document everything, date everything.</strong> A TSH reading without knowing the supplement timing that day is half a data point.</li>
+          <li><strong>Pressure-test dismissals.</strong> If a concern is waved off, generate 3–5 clinical questions to test whether it was evaluated or just de-prioritized.</li>
+          <li><strong>No fluff.</strong> Generic "eat well, sleep more" advice is noise. The system is tuned to produce specific, actionable, evidence-backed output only.</li>
+        </ol>
+
+        <h2>What's Next</h2>
+        
+        <p>Add sleep patterns, weight numbers, other exercises ... incorporate this into travel plans and many more applications of this health layer!</p>
+      </div>
+
+      <nav class="post-nav">
+        <a class="nav-prev" href="/2026/05/31/the-git-backed-brain/">&larr; The Git-Backed Brain: Using a Repo as Shared Agent Memory</a>
+      </nav>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-social">
+      <a href="https://x.com/kidakaka">X / Twitter</a>
+      <a href="https://instagram.com/kidakaka">Instagram</a>
+      <a href="https://facebook.com/kidakaka">Facebook</a>
+    </div>
+    <div>&copy; Prasad Ajinkya &nbsp;&middot;&nbsp; <a href="/legal/">Legal</a></div>
+  </footer>
+</div>
+</body>
+</html>
