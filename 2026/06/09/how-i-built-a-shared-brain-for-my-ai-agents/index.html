@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How I Built a Shared Brain for My AI Agents | The Big Fat Geek</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <a href="/" class="site-title">The Big Fat Geek</a>
+    <p class="site-tagline">Personal blog of Prasad Ajinkya</p>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/legal/">Legal</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <div class="post-header">
+        <h1>How I Built a Shared Brain for My AI Agents</h1>
+        <div class="post-meta">9 June 2026 &nbsp;&middot;&nbsp; <span class="cats"><a href="/category/technology/">Technology</a>, <a href="/category/work/">Work</a></span></div>
+      </div>
+
+      <div class="post-body">
+        <p>I manage technology at <a href="https://homeville.in">Homeville Group</a> — co-lending platforms, housing finance compliance systems, NBFC operations. The work is dense: RBI regulatory frameworks, co-lending architectures, sprint automation, escrow reconciliation, bureau reporting transitions. The kind of domain where context is everything and forgetting is expensive.</p>
+        
+        <p>I work with AI agents daily — primarily Claude and Gemini — and for a long time I hit the same wall everyone hits: <strong>every conversation started from zero.</strong> I'd re-explain the same architecture, re-paste the same compliance context, re-establish the same mental models. Hundreds of tokens, every session, just to get back to where we left off.</p>
+        
+        <p>So I built something to fix it. I had written a post earlier on this <a href="/2026/05/31/the-git-backed-brain/">Git-backed brain</a>.</p>
+
+        <h2>The Problem: AI Agents Have No Long-Term Memory</h2>
+        
+        <p>Here's the uncomfortable truth about working with LLMs in a real organisational context:</p>
+        <ul>
+          <li><strong>Each session is stateless.</strong> Claude doesn't remember what we discussed last Tuesday.</li>
+          <li><strong>Context windows are finite.</strong> You can't paste your entire company's history into every prompt.</li>
+          <li><strong>Decisions decay.</strong> Six months later, nobody remembers <em>why</em> we made that architecture call — not the human, and definitely not the AI.</li>
+          <li><strong>Multi-agent setups fragment knowledge.</strong> When Claude and Gemini both work on your codebase, they can't learn from each other unless you deliberately create a shared channel.</li>
+        </ul>
+        
+        <p>The usual workarounds — pasting notes, maintaining a CLAUDE.md, hoping the model "remembers" via in-context retrieval — are brittle. They require manual effort, they break at scale, and they don't survive agent handoffs.</p>
+        
+        <p>What I needed was a <strong>shared external memory</strong> that any agent could read and write, that persisted across sessions, and that maintained a literal history of thought.</p>
+
+        <h2>The Architecture: Two-Layer Memory</h2>
+        
+        <p>The solution I landed on uses two repositories as distinct memory layers, each serving a different purpose.</p>
+        
+<pre><code>┌─────────────────────────────────────────────────────────┐
+│                    AI AGENT SESSION                     │
+│                (Claude / Gemini / Claude Code)          │
+└────────────────────────┬────────────────────────────────┘
+                         │ reads context from
+          ┌──────────────┴──────────────┐
+          │                             │
+          ▼                             ▼
+┌─────────────────┐           ┌──────────────────────┐
+│   DNYANKOSH     │           │      MANTHAN         │
+│  (GitLab, pvt)  │           │   (GitHub, pvt)      │
+│                 │           │                      │
+│ Organisational  │           │  Active execution    │
+│ memory. Stable  │           │  context. Updated    │
+│ foundational    │           │  every session.      │
+│ knowledge,      │           │  Sprint state,       │
+│ policies, arch  │           │  decisions,          │
+│ precedents.     │           │  working memory.     │
+└─────────────────┘           └──────────────────────┘</code></pre>
+
+        <h3>Layer 1: Dnyankosh (Sanskrit: <em>repository of knowledge</em>)</h3>
+        
+        <p><strong>What it is:</strong> A self-hosted GitLab repository — the organisational long-term memory. It contains stable, foundational knowledge: regulatory frameworks we operate under, architectural precedents, product principles, team onboarding context, domain glossaries.</p>
+        
+        <p><strong>Who writes it:</strong> Primarily humans. These are deliberate, reviewed documents. Changes here are infrequent.</p>
+        
+        <p><strong>Who reads it:</strong> Every AI agent, at session start, for domain grounding. It's exposed to Claude via GitLab MCP (Project ID: 268), so agents can query it directly without copy-pasting.</p>
+        
+        <p><strong>The analogy:</strong> Dnyankosh is the company wiki crossed with a law library. You don't update it every day. But when you need to know <em>why</em> the co-lending architecture works a certain way, or what regulatory constraint drives a product decision, it's there.</p>
+
+        <h3>Layer 2: Manthan (Sanskrit: <em>churning</em>)</h3>
+        
+        <p><strong>What it is:</strong> A GitHub repository — the active execution context. It's updated continuously, every session, by both humans and AI agents. The name comes from the mythological churning of the ocean — the idea of collaborative work producing something valuable from effort.</p>
+        
+        <p><strong>Who writes it:</strong> Both humans and AI agents. Claude commits session logs, ADRs, context updates, and automation tools directly to this repo.</p>
+        
+        <p><strong>Who reads it:</strong> Every agent, at session start, for active state. The entry point is always <code>context/working-memory-YYYY-MM.md</code>.</p>
+        
+        <p><strong>The structure:</strong></p>
+<pre><code>manthan/
+├── decisions/       # Architecture Decision Records (ADRs)
+├── context/         # Active sprint state, ops context, working memory
+├── prompts/         # Reusable agent instruction templates
+├── harnesses/       # Automation scripts (Python, production-ready)
+└── observability/   # Agent session logs and telemetry
+    └── sessions/    # JSON log per session, every session</code></pre>
+
+        <h2>How Agents Use It: The Session Protocol</h2>
+        
+        <p>Every Claude session follows this sequence:</p>
+        <ol>
+          <li><strong>Fetch root of Manthan</strong> — get the directory tree, orient.</li>
+          <li><strong>Read <code>context/working-memory-YYYY-MM.md</code></strong> — this is the highest-signal document. It captures current sprint state, open decisions, active workstreams, and recent decisions.</li>
+          <li><strong>Check <code>INDEX.md</code></strong> — full table of contents for quick lookups.</li>
+          <li><strong>Read domain-specific context</strong> — if the session is about co-lending, read <code>context/co-lending-operations.md</code>. If it's about CIC reporting, read <code>context/cic_reporting_transition_context.md</code>. And so on.</li>
+          <li><strong>Query Dnyankosh</strong> — for foundational constraints or architectural precedents before proposing solutions.</li>
+          <li><strong>Do the work.</strong></li>
+          <li><strong>Commit session log to <code>observability/sessions/</code></strong> — a structured JSON recording what was done, duration, tokens, outcome, files touched.</li>
+        </ol>
+        
+        <p>This protocol means the agent starts each session already knowing what we've been working on, what decisions have been made, and what constraints apply. Zero re-briefing time.</p>
+
+        <h2>The Observability Layer</h2>
+        
+        <p>This was the piece I didn't originally plan, but it turned out to be one of the most valuable.</p>
+        
+        <p>Every session produces a structured JSON log committed to <code>observability/sessions/</code>:</p>
+<pre><code>{
+  "session_id": "session-20260608-143022-claude",
+  "agent": "claude-sonnet-4-6",
+  "date": "2026-06-08",
+  "duration_minutes": 45,
+  "task": "CIC reporting transition context update",
+  "outcome": "completed",
+  "files_modified": [
+    "context/cic_reporting_transition_context.md"
+  ],
+  "tokens_estimated": 12000,
+  "decisions_made": ["Blended rate to be reported to CICs for co-lending loans"],
+  "open_items": ["July 1 UCRF deadline — state codes update"]
+}</code></pre>
+        
+        <p>The result: <strong>a literal history of what every agent did, in every session, across all of time.</strong> You can audit exactly what Claude touched on a given day. You can see where a decision came from. You can reconstruct the reasoning behind any context document by reading the session logs around it.</p>
+        
+        <p>This also enables cross-agent collaboration. When Gemini picks up a task, it can read Claude's recent session logs and understand what's already been done and what's still open — without any human having to do the handoff.</p>
+
+        <h2>The Auto-Sync: Keeping Memory Fresh Without Manual Effort</h2>
+        
+        <p>One of the hardest problems with any knowledge base is keeping it current. The solution here is a weekly GitHub Actions workflow that auto-syncs Manthan from four sources:</p>
+        <ul>
+          <li><strong>OpenProject</strong> — closed work packages this week (sprint progress)</li>
+          <li><strong>GitLab</strong> — merged MRs this week (code changes)</li>
+          <li><strong>Granola</strong> — meeting notes from the week</li>
+          <li><strong>Obsidian</strong> — notes modified this week</li>
+        </ul>
+        
+        <p>Every Sunday at 23:00 UTC, the workflow runs, pulls data from all four sources, generates a <code>context/weekly-sync-YYYY-WWW.md</code>, and commits it. The repo is always current. Zero manual effort after the 5-minute setup.</p>
+
+        <h2>The MCP Layer: Agents Can Actually Read (and Write) These Repos</h2>
+        
+        <p>The whole system depends on AI agents having direct, live access to these repositories — not via copy-pasting, but via <strong>MCP (Model Context Protocol)</strong> connections.</p>
+        
+        <p>For Claude in the web interface:</p>
+        <ul>
+          <li>The GitLab self-hosted instance is connected via MCP, giving direct access to Dnyankosh</li>
+          <li>GitHub is connected via MCP, giving read/write access to Manthan</li>
+          <li>Google Calendar, Gmail, Granola, Google Drive, and Microsoft 365 are also connected</li>
+        </ul>
+        
+        <p>For Claude Code CLI:</p>
+        <ul>
+          <li>GitHub MCP runs as a Docker container authenticated with a Personal Access Token</li>
+          <li>Gives Claude Code the same read/write access to Manthan during coding sessions</li>
+        </ul>
+        
+        <p>The result: Claude can fetch a context document, update it, and commit the change — all in one session, without any human intermediary.</p>
+
+        <h2>Design Principles That Made It Work</h2>
+        
+        <p>After building this and running it for several months, a few principles emerged as critical:</p>
+        
+        <p><strong>1. Agents need context, not instructions.</strong><br>
+        The single biggest insight. Give agents rich context documents and they figure out what to do. Long system prompts with rules are brittle; a well-maintained working memory document is resilient.</p>
+        
+        <p><strong>2. Dated decisions &gt; decisions in chat.</strong><br>
+        Every ADR has a date and a "why." Six months later, you can reconstruct the reasoning. Chat history is ephemeral. GitHub is permanent.</p>
+        
+        <p><strong>3. Working memory beats weekly syncs.</strong><br>
+        The <code>working-memory-YYYY-MM.md</code> document — updated continuously — is the highest-signal entry point. Weekly sync reports are useful but no substitute for a live, curated context document.</p>
+        
+        <p><strong>4. Immutability for decisions; mutability for context.</strong><br>
+        ADRs are never modified after they're written (decisions are historical facts). Context documents are updated freely (they reflect current reality). The distinction matters for auditability.</p>
+        
+        <p><strong>5. Two MCP namespaces can coexist — know which one has private repo access.</strong><br>
+        This caused a surprising amount of debugging. The <code>mcp__plugin_ecc_github__*</code> namespace only has public repo access; <code>mcp__github__*</code> has private repo access. One 404 is all it takes to make you read the docs properly.</p>
+
+        <h2>What This Looks Like In Practice</h2>
+        
+        <p>A real session, verbatim context:</p>
+        <blockquote>
+          <p>"Before responding, Claude fetches <code>context/working-memory-2026-06.md</code>, reads the CIC reporting transition section, queries Dnyankosh for the relevant RBI Credit Information Reporting Directions, cross-references the open gap items list, and comes back with a compliance checklist citing specific paragraphs — without me having to re-explain what UCRF is, what our current state is, or what the July 1 deadline means."</p>
+        </blockquote>
+        
+        <p>That's the experience this system enables. Agents that are genuinely up to speed. Not because they have better models (though that helps), but because they have better context.</p>
+
+        <h2>What's Next</h2>
+        
+        <p>A few things on the roadmap:</p>
+        <ul>
+          <li><strong>Dnyankosh Claude plugin</strong> — packaging Dnyankosh as a first-class Claude project knowledge source, so the organisational context loads automatically in every session without explicit fetches.</li>
+          <li><strong>BHN Integration MCP</strong> — a 33-tool MCP server (TypeScript, Streamable HTTP) giving agents direct access to the lending management system, not just documentation about it.</li>
+          <li><strong>Agent autonomy framework</strong> — today, agents update context documents but human review is required for ADRs. The next step is defining a protocol for agents to make low-risk architectural decisions autonomously and record them to Manthan without blocking on human review.</li>
+          <li><strong>Multi-org support</strong> — the Manthan architecture is general enough to work beyond Homeville. Designing it to be templatable for other organisations is an interesting open problem.</li>
+        </ul>
+
+        <h2>The Repo</h2>
+        
+        <p>Manthan is at <a href="https://github.com/kidakaka/manthan">github.com/kidakaka/manthan</a>. It's a private repo, but the README is a detailed spec of the architecture — worth reading if you want to build something similar.</p>
+        
+        <p>The system took about a week to design and two weeks to fully instrument. The ongoing maintenance burden is roughly two hours a month. The value — agents that remember, context that accumulates, decisions that are auditable — is difficult to overstate.</p>
+        
+        <p>If you're working with AI agents at any scale beyond toy projects, you need an external memory layer. This is how I built mine.</p>
+
+      </div>
+
+      <nav class="post-nav">
+        <a class="nav-prev" href="/2026/06/08/ai-health-copilot/">&larr; I Built an AI "Second Opinion" System for My Own Health — Here's How It Works</a>
+      </nav>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-social">
+      <a href="https://x.com/kidakaka">X / Twitter</a>
+      <a href="https://instagram.com/kidakaka">Instagram</a>
+      <a href="https://facebook.com/kidakaka">Facebook</a>
+    </div>
+    <div>&copy; Prasad Ajinkya &nbsp;&middot;&nbsp; <a href="/legal/">Legal</a></div>
+  </footer>
+</div>
+</body>
+</html>
