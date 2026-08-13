@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deterministic AI: Why I Replaced Vector DBs with Git &amp; Markdown | The Big Fat Geek</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <a href="/" class="site-title">The Big Fat Geek</a>
+    <p class="site-tagline">Personal blog of Prasad Ajinkya</p>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/legal/">Legal</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <div class="post-header">
+        <h1>Deterministic AI: Why I Replaced Vector DBs with Git &amp; Markdown</h1>
+        <div class="post-meta">10 August 2026 &nbsp;&middot;&nbsp; <span class="cats"><a href="/category/technology/">Technology</a>, <a href="/category/work/">Work</a></span></div>
+      </div>
+
+      <div class="post-body">
+        <p>Over the past year, the standard advice for building long-term memory for AI agents has been unanimous: <em>"Chunk your documents, embed them into a vector database, and perform cosine similarity searches using RAG (Retrieval-Augmented Generation)."</em></p>
+        
+        <p>In theory, vector databases promise magical, infinite semantic memory. In practice, when running multi-agent workflows across production engineering systems at <a href="https://homeville.in">Homeville Group</a>, vector search continuously broke down in frustrating and predictable ways.</p>
+
+        <p>Earlier, I wrote about <a href="/2026/05/31/the-git-backed-brain/">The Git-Backed Brain</a> and <a href="/2026/06/09/how-i-built-a-shared-brain-for-my-ai-agents/">How I Built a Shared Brain for My AI Agents</a>. Today, after millions of tokens and hundreds of subagent sessions, I want to explain why we completely threw out our vector DB infrastructure in favor of something aggressively simple: <strong>deterministic Markdown files stored inside a Git repository.</strong></p>
+
+        <h2>The Flaws of Vector Search in Agentic Workflows</h2>
+        
+        <p>Vector databases excel at fuzzy semantic matching—like finding similar customer support tickets or querying unstructured PDF libraries. But autonomous coding and architectural agents don't need "fuzzy similarity." They need <strong>exact, deterministic context.</strong></p>
+        
+        <p>Here is why vector search failed our agent workflows:</p>
+
+        <h3>1. Vector Chunking Destroys Context &amp; Hierarchy</h3>
+        <p>To feed text into an embedding model, you must split files into chunks (typically 256 to 1024 tokens). When an agent asks for context on a co-lending escrow audit pipeline, vector search might retrieve Chunk 4 of an Architecture Decision Record (ADR). However, Chunk 4 might depend entirely on a constraint defined in Chunk 1. Without the parent document structure, the agent acts on incomplete assumptions.</p>
+
+        <h3>2. Cosine Similarity is Non-Deterministic</h3>
+        <p>Similarity scores fluctuate based on slight variations in prompt phrasing. Prompting an agent with <em>"How do we handle RBI co-lending reports?"</em> might pull `ADR-012.md` with a 0.82 score today, but pull an outdated meeting summary with a 0.84 score tomorrow because of a minor wording tweak. In software architecture, retrieval unpredictability leads to hallucinated code patterns.</p>
+
+        <h3>3. You Can't `git bisect` an Embedding Index</h3>
+        <p>When an agent produces a bug because it used obsolete API guidelines, how do you debug the vector database? You can't run `git log` on a high-dimensional vector space. You can't inspect diffs between embedding updates, nor can you roll back a vector index to exact timestamps easily.</p>
+
+        <h2>The Alternative: Deterministic File Systems + Git</h2>
+
+        <p>Instead of converting text into mathematical vectors, we structured our agent memory as a simple Markdown taxonomy inside a Git repository:</p>
+
+<pre><code>manthan/
+├── context/
+│   ├── working-memory-2026-08.md    # Active monthly focus &amp; goals
+│   └── active-sprints.md           # Current sprint state &amp; blockers
+├── decisions/
+│   ├── ADR-001-colending-escrow.md  # Immutable architecture records
+│   └── ADR-002-rbi-compliance.md
+├── systems/
+│   ├── banking-integrations.md     # Component specs &amp; data schemas
+│   └── audit-telemetry.md
+└── logs/
+    └── sessions/                   # Automated JSON output per agent run</code></pre>
+
+        <h3>How Agents Access Context Deterministically</h3>
+        <p>Rather than performing RAG queries over a vector store, agents use standardized tools (like native file readers or custom MCP servers) to fetch explicit files based on explicit indices:</p>
+        
+        <ul>
+          <li><strong>Index File Bootstrapping:</strong> Every agent session starts by reading a small, fixed index file (<code>context/working-memory-2026-08.md</code>) that links to active specifications.</li>
+          <li><strong>Explicit Document Paths:</strong> When working on the co-lending engine, the agent system prompt instructs it to directly read <code>decisions/ADR-001-colending-escrow.md</code>.</li>
+          <li><strong>Zero Inference Overhead:</strong> There is no embedding API call, no vector calculation, and zero chance of pulling unrelated snippets.</li>
+        </ul>
+
+        <h2>Comparing the Two Approaches</h2>
+
+        <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
+          <thead>
+            <tr style="border-bottom: 2px solid #ccc; text-align: left;">
+              <th style="padding: 8px;">Metric / Feature</th>
+              <th style="padding: 8px;">Vector DB / RAG</th>
+              <th style="padding: 8px;">Git + Structured Markdown</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 8px;"><strong>Retrieval Accuracy</strong></td>
+              <td style="padding: 8px;">Probabilistic (85-90%)</td>
+              <td style="padding: 8px;">Deterministic (100%)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 8px;"><strong>Infrastructure Cost</strong></td>
+              <td style="padding: 8px;">$50–$300/mo (Vector DB + Embeddings)</td>
+              <td style="padding: 8px;">$0 (Existing Git repo)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 8px;"><strong>Auditability &amp; Diffs</strong></td>
+              <td style="padding: 8px;">Opaque index updates</td>
+              <td style="padding: 8px;">Native `git log`, `git diff`, `git blame`</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 8px;"><strong>Multi-Agent Sync</strong></td>
+              <td style="padding: 8px;">Complex index synchronization</td>
+              <td style="padding: 8px;">Standard `git pull` / `git push`</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>When Does Vector Search Still Make Sense?</h2>
+        <p>Vector databases aren't useless. If you are indexing 50,000 unstructured customer support emails, 100,000 legal contracts with arbitrary naming, or running semantic search over public product catalogs, RAG is indispensable.</p>
+        
+        <p>But for **agentic software development, system design, and internal engineering workflows**, you don't have millions of unstructured documents. You have a few dozen critical specs, architecture decisions, and codebases. Placing a complex vector pipeline between your agent and your documentation introduces fragility where you need determinism.</p>
+
+        <h2>Conclusion: Less Magic, Better Software</h2>
+        <p>In AI engineering, it is easy to mistake infrastructure complexity for sophistication. Replacing vector databases with Git and Markdown stripped away operational overhead, reduced latency, and eliminated an entire class of retrieval bugs in our agents.</p>
+        
+        <p>Before reaching for a vector database for your agent's memory, ask yourself: <em>Could this just be a clean file tree in Git?</em> More often than not, the simplest tool is still the best one.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-social">
+      <a href="https://x.com/kidakaka">X / Twitter</a>
+      <a href="https://instagram.com/kidakaka">Instagram</a>
+      <a href="https://facebook.com/kidakaka">Facebook</a>
+    </div>
+    <div>&copy; Prasad Ajinkya &nbsp;&middot;&nbsp; <a href="/legal/">Legal</a></div>
+  </footer>
+</div>
+</body>
+</html>
