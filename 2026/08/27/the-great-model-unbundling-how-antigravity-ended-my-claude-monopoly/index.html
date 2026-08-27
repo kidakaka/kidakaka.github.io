@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Great Model Unbundling: How Antigravity and Multi-Agent Orchestration Ended My Claude Monopoly | The Big Fat Geek</title>
+  <link rel="stylesheet" href="/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9833220184772142"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+  <header>
+    <a href="/" class="site-title">The Big Fat Geek</a>
+    <p class="site-tagline">Personal blog of Prasad Ajinkya</p>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/legal/">Legal</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <div class="post-header">
+        <h1>The Great Model Unbundling: How Antigravity and Multi-Agent Orchestration Ended My Claude Monopoly</h1>
+        <div class="post-meta">27 August 2026 &nbsp;&middot;&nbsp; <span class="cats"><a href="/category/technology/">Technology</a>, <a href="/category/work/">Work</a></span></div>
+      </div>
+
+      <div class="post-body">
+        <img src="/images/model_unbundling_banner.jpg" alt="The Great Model Unbundling: How Antigravity and Multi-Agent Orchestration Ended My Claude Monopoly" class="post-image">
+
+        <p>If you looked at my AI engineering telemetry at the start of June 2026, the data told a singular, indisputable story: <strong>Anthropic&rsquo;s Claude was my entire world.</strong></p>
+
+        <p>In our internal engineering repository—<em>Manthan</em>, which serves as the shared brain and observability hub for all our AI workloads across <a href="https://homeville.in">Homeville Group</a> and Bharat Housing Network (BHN)—Claude was logging <strong>99 out of every 101 sessions</strong>. Over 98% of our compute, token consumption, and daily agent runs flowed through a single model family. Claude Sonnet was our default hammer for everything: drafting Architecture Decision Records (ADRs), refactoring co-lending microservices, parsing regulatory circulars, and troubleshooting CI/CD harnesses.</p>
+
+        <p>Fast forward to late August 2026, and the picture has inverted entirely.</p>
+
+        <p>In our latest daily telemetry runs, Claude accounts for <strong>less than 15% of active sessions</strong>. The bulk of our high-velocity software engineering, context synthesis, and background automation has migrated to <strong>Google&rsquo;s Antigravity</strong> (powered by Gemini 3.1 Pro/Flash) and autonomous headless agents like <strong>LivAgent</strong>.</p>
+
+        <p>This was not an ideological shift. It was the natural, inevitable outcome of two converging architectural breakthroughs: the launch of <strong>Antigravity&rsquo;s agentic orchestration engine</strong> and the establishment of <strong>a model-agnostic, Git-backed shared memory layer</strong>.</p>
+
+        <p>Here is the hard data from <strong>308 production sessions and over 14 million tokens</strong>, why the shift happened, and what it reveals about the future of enterprise AI orchestration.</p>
+
+        <h2>The Telemetry: 308 Sessions Under the Microscope</h2>
+
+        <p>In our <a href="/2026/08/21/ai-in-qa-maturity-curves-shared-brain-and-opentelemetry/">Manthan Observability infrastructure</a>, every single agent session—whether interactive pair-programming or headless cron—is instrumented. We record wall-clock duration, input/output tokens, tool call latencies, error frequencies, and task outcomes.</p>
+
+        <p>Here is our cumulative telemetry breakdown across 308 production sessions:</p>
+
+        <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
+          <thead>
+            <tr style="border-bottom: 2px solid #ccc; text-align: left;">
+              <th style="padding: 8px;">Agent / Engine</th>
+              <th style="padding: 8px;">Total Sessions</th>
+              <th style="padding: 8px;">Total Tokens</th>
+              <th style="padding: 8px;">Avg Duration</th>
+              <th style="padding: 8px;">Primary Operational Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 8px;"><strong>Claude (Sonnet / Opus)</strong></td>
+              <td style="padding: 8px;">178 (57.8%)</td>
+              <td style="padding: 8px;">7,322,730 (51.8%)</td>
+              <td style="padding: 8px;">2,275s (~38 min)</td>
+              <td style="padding: 8px;">Principal Architecture, Complex ADRs, CCB Governance</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 8px;"><strong>Antigravity (Gemini 3.1 Pro/Flash)</strong></td>
+              <td style="padding: 8px;">71 (23.1%)</td>
+              <td style="padding: 8px;">2,967,400 (21.0%)</td>
+              <td style="padding: 8px;">1,342s (~22 min)</td>
+              <td style="padding: 8px;">Interactive Coding, Fast Refactoring, Harness Automation</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 8px;"><strong>LivAgent (Headless Cron)</strong></td>
+              <td style="padding: 8px;">55 (17.9%)</td>
+              <td style="padding: 8px;">3,848,500 (27.2%)</td>
+              <td style="padding: 8px;">7,116s (~118 min)</td>
+              <td style="padding: 8px;">ERP Triage, Telemetry Aggregation, Background Syncs</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 8px;"><strong>Other / Specialized</strong></td>
+              <td style="padding: 8px;">4 (1.3%)</td>
+              <td style="padding: 8px;">—</td>
+              <td style="padding: 8px;">—</td>
+              <td style="padding: 8px;">Experimental harnesses &amp; benchmark evaluations</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>While the all-time cumulative numbers still show Claude in the lead due to our massive volume in Q1 and Q2, the <strong>trajectory over time</strong> tells the real story:</p>
+
+        <ul>
+          <li><strong>June 4, 2026:</strong> Claude: 99 sessions | Antigravity: 2 sessions | LivAgent: 0 sessions (Claude = <strong>98.0%</strong>)</li>
+          <li><strong>July 21, 2026:</strong> Claude: 11 sessions | Antigravity: 4 sessions | LivAgent: 0 sessions (Claude = <strong>73.3%</strong>)</li>
+          <li><strong>August 14, 2026:</strong> Claude: 2 sessions | Antigravity: 0 sessions | LivAgent: 2 sessions (Claude = <strong>50.0%</strong>)</li>
+          <li><strong>August 25, 2026:</strong> LivAgent: 5 sessions | Antigravity: 2 sessions | Claude: 1 session (Claude = <strong>12.5%</strong>)</li>
+        </ul>
+
+        <p>Across the entire ecosystem, our overall task success rate climbed to <strong>98.95%</strong> (284 successes, 0 hard failures, 3 blocked on external dependencies). How did unbundling Claude across multiple models improve efficiency while driving down latency?</p>
+
+        <h2>Catalyst 1: The Shared Brain Commoditized the Model</h2>
+
+        <p>In <a href="/2026/05/31/the-git-backed-brain/">The Git-Backed Brain</a> and <a href="/2026/08/10/deterministic-ai-why-i-replaced-vector-dbs-with-git-and-markdown/">Deterministic AI</a>, I explained why we rejected vector databases in favor of a centralized Git repository with Open Knowledge Format (OKF v0.2) frontmatter and Anthropic&rsquo;s Model Context Protocol (<a href="/2026/08/26/dnyankosh-mcp-the-blueprint-for-enterprise-ai-infusion/">Dnyankosh MCP</a>).</p>
+
+        <p>What I did not fully appreciate at the time was the secondary effect of this decision: <strong>once institutional memory lives in Git, the LLM becomes interchangeable compute.</strong></p>
+
+        <p>When you rely on an LLM&rsquo;s conversational history or proprietary vendor memory silos, switching models incurs a massive context penalty. You stay with Claude not because it is the optimal tool for every sub-task, but because &ldquo;Claude knows the project history.&rdquo;</p>
+
+        <p>By enforcing our <em>Interim Coding Agent Workspace &amp; Memory Protocol</em> (<a href="#">ADR-015</a>), any agent entering our repository follows a strict 4-phase hydration cycle:</p>
+
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                      THE MODEL-AGNOSTIC MESH                            │
+└────────────────────────────────────┬────────────────────────────────────┘
+                                     │
+           ┌─────────────────────────┼─────────────────────────┐
+           ▼                         ▼                         ▼
+  ┌─────────────────┐       ┌─────────────────┐       ┌─────────────────┐
+  │     CLAUDE      │       │   ANTIGRAVITY   │       │    LIVAGENT     │
+  │ (Arch &amp; Strategy│       │ (Interactive IDE│       │ (Headless Cron  │
+  │    Reasoning)   │       │  &amp; Fast Code)   │       │   &amp; Telemetry)  │
+  └────────┬────────┘       └────────┬────────┘       └────────┬────────┘
+           │                         │                         │
+           └─────────────────────────┼─────────────────────────┘
+                                     │ Standardized MCP &amp; OKF
+                                     ▼
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │                    MANTHAN / DNYANKOSH REPOSITORY                   │
+  │                                                                     │
+  │   /decisions/        (ADRs: Immutable Architecture Constraints)     │
+  │   /context/coding/   (Active tasks, coding standards, branch state) │
+  │   /observability/    (Session JSON telemetry, daily digests)        │
+  └─────────────────────────────────────────────────────────────────────┘</code></pre>
+
+        <p>Because the agent hydrates its state from <code>/context/status-dashboard.md</code>, <code>/context/coding/active-coding-tasks.md</code>, and <code>/decisions/</code>, we can swap between Claude, Antigravity, or LivAgent mid-sprint without losing a single line of architectural context.</p>
+
+        <h2>Catalyst 2: The Rise of Specialized Agent Topologies</h2>
+
+        <p>Once models became interchangeable, we quickly realized that forcing one model to handle every tier of work is like asking your Chief Technology Architect to manually run nightly database backups and resolve Jira tickets. It is a severe misallocation of capability and latency.</p>
+
+        <p>Our workload naturally bifurcated into three distinct agent topologies:</p>
+
+        <h3>1. Antigravity: The High-Velocity Pair Programmer</h3>
+        <p>Google&rsquo;s <strong>Antigravity</strong> (built on Gemini 3.1) entered our stack and immediately took over the interactive development loop. Why?</p>
+        <ul>
+          <li><strong>Execution Latency:</strong> Antigravity sessions clock in at an average of <strong>1,342 seconds (~22 minutes)</strong> compared to Claude&rsquo;s <strong>2,275 seconds (~38 minutes)</strong>—a <strong>41% reduction in turn-around time</strong>.</li>
+          <li><strong>Tool Calling Velocity:</strong> Antigravity handles rapid-fire multi-file operations (<code>view_file</code>, <code>multi_replace_file_content</code>, <code>run_command</code>) with near-instantaneous execution.</li>
+          <li><strong>Huge Token Ingestion:</strong> Ingesting massive repo structures, ASTs, and test logs without running into strict token throttling allowed us to complete full refactorings in a single pass.</li>
+        </ul>
+
+        <h3>2. LivAgent: The Headless Background Daemon</h3>
+        <p>For operations that don&rsquo;t require interactive human feedback, we deployed <strong>LivAgent</strong>. LivAgent operates as an autonomous worker on long-running tasks:</p>
+        <ul>
+          <li>Running nightly ERP ticket triage across 80+ open support issues (fetching tickets, classifying categories, updating 200+ database fields, and posting executive digests to Microsoft Teams).</li>
+          <li>Executing scheduled git synchronization harnesses (<code>sync_manthan.py</code>) and calculating rolling daily/weekly metrics.</li>
+          <li>LivAgent accounts for over <strong>3.84M tokens</strong> across 55 sessions, running marathon background tasks (averaging 7,116 seconds) without tying up human attention or burning high-cost frontier interactive quotas.</li>
+        </ul>
+
+        <h3>3. Claude: The Chief Architect &amp; Deliberative Reasoner</h3>
+        <p>Does this mean Claude is obsolete? Absolutely not. Instead, Claude has been promoted to our <strong>Principal Architect</strong>.</p>
+        <p>When we need to draft foundational architectural specs—such as <a href="#">ADR-016</a> defining our Three-Layer Appropriation Logic for co-lending collections, or evaluating the regulatory boundaries of Direct Assignment Phase 2 under RBI mandates—Claude remains unmatched in structural nuance, cautious reasoning, and adversarial edge-case analysis. We invoke Claude when the cost of ambiguity is existential.</p>
+
+        <h2>Catalyst 3: Data Residency &amp; Infrastructure Realities</h2>
+
+        <p>There was also a pragmatic, regulatory driver behind our migration. As a regulated fintech platform processing over 600 loans a month (scaling to 1,500/month), data sovereignty is non-negotiable under India&rsquo;s <strong>DPDPA 2023</strong> and client bank SLAs.</p>
+
+        <p>As documented in our infrastructure evaluation (<a href="#">ADR-013</a>):</p>
+        <ul>
+          <li>Running AI inference across international cloud regions created compliance friction with bank partners.</li>
+          <li>With <strong>Gemini 3.1</strong> becoming available natively within Indian GCP regions (and AWS India-hosted partner tiers), we gained the ability to run high-throughput document verification, income extraction, and codebase synthesis with <strong>India-only data residency guarantees</strong>.</li>
+        </ul>
+
+        <h2>Key Lessons for Engineering Leaders</h2>
+
+        <p>If your team is currently locked into a single AI model or wrestling with ballooning API costs and developer latency, here are three principles from our transition:</p>
+
+        <h3>1. Decouple Memory from Compute</h3>
+        <p>Never let an AI vendor or proprietary platform become the sole custodian of your organizational memory. Store your decisions, system boundaries, active tasks, and glossaries in plain, version-controlled Markdown. Use open protocols like MCP so any agent can connect on demand.</p>
+
+        <h3>2. Match the Model to the Execution Topology</h3>
+        <p>Stop looking for the &ldquo;one model to rule them all.&rdquo; A mature AI engineering stack requires a portfolio:</p>
+        <ul>
+          <li><strong>Deliberative Reasoners (Claude Opus/Sonnet):</strong> For high-governance ADRs, legal compliance, and architecture design.</li>
+          <li><strong>Agile Synthesizers (Antigravity / Gemini Pro):</strong> For high-cadence IDE interaction, refactoring, test execution, and harness development.</li>
+          <li><strong>Autonomous Daemons (LivAgent / Flash models):</strong> For scheduled maintenance, ticket enrichment, and telemetry pipelines.</li>
+        </ul>
+
+        <h3>3. Measure Everything with Deterministic Observability</h3>
+        <p>You cannot optimize an agentic workflow by intuition. Instrument your tool calls, record token efficiency metrics, track session duration, and inspect error distributions. The moment we saw Antigravity completing coding sessions in half the time of our legacy setup with identical 100% test pass rates, the migration became an obvious engineering decision.</p>
+
+        <h2>The Future is a Multi-Agent Mesh</h2>
+
+        <p>The narrative in generative AI has long been dominated by the &ldquo;Model Horse Race&rdquo;—which lab has the top leaderboard score this week. But in production engineering, <strong>the frontier model is just a component in a larger orchestration harness.</strong></p>
+
+        <p>By pairing Antigravity&rsquo;s agile execution with Claude&rsquo;s architectural precision, LivAgent&rsquo;s tireless background automation, and Manthan&rsquo;s deterministic Git-backed brain, we achieved something far more valuable than picking a single winner:</p>
+
+        <p><strong>We built a resilient, multi-model AI mesh that moves as fast as we can think.</strong></p>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Prasad Ajinkya. All rights reserved.</p>
+  </footer>
+</div>
+</body>
+</html>
