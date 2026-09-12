@@ -71,6 +71,41 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://kidakaka.com/category/ads/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kidakaka.com/category/books/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kidakaka.com/category/games/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kidakaka.com/category/health/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kidakaka.com/category/humour/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kidakaka.com/category/movies/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kidakaka.com/category/music/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://kidakaka.com/2026/08/27/the-great-model-unbundling-how-antigravity-ended-my-claude-monopoly/</loc>
     <lastmod>2026-08-27</lastmod>
     <changefreq>never</changefreq>
