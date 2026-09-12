@@ -1,0 +1,506 @@
+# The Big Fat Geek — Complete Archive & LLM Index
+
+> Full archive of all articles, essays, and publications on The Big Fat Geek (https://kidakaka.com) by Prasad Ajinkya. Contains 94 articles published between 2008 and 2026.
+
+## Core Information
+- Site: https://kidakaka.com
+- Author: Prasad Ajinkya (prasad@kidakaka.com)
+- Focus: Agentic AI, Deterministic AI memory, Multi-agent orchestration, Enterprise software, Indian Fintech & Micro-lending, Engineering leadership, Data Analytics.
+
+## 2026 (13 articles)
+
+### [The Great Model Unbundling: How Antigravity and Multi-Agent Orchestration Ended My Claude Monopoly](https://kidakaka.com/2026/08/27/the-great-model-unbundling-how-antigravity-ended-my-claude-monopoly/)
+- **Date**: 27 August 2026
+- **Categories**: Technology, Work
+- **Summary**: Six months ago, Claude handled 98% of our AI engineering sessions. Today, it is under 15%. Here is the telemetry from 308 production sessions on how Antigravity, LivAgent, and a Git-backed shared brain ended our Claude monopoly.
+
+### [Dnyankosh MCP: The Blueprint for Enterprise AI Infusion](https://kidakaka.com/2026/08/26/dnyankosh-mcp-the-blueprint-for-enterprise-ai-infusion/)
+- **Date**: 26 August 2026
+- **Categories**: Technology, Work
+- **Summary**: Why enterprise AI adoption stalls at the “clever toy” stage, and how building an MCP gateway over deterministic, Git-backed institutional knowledge provides a blueprint for scalable AI infusion.
+
+### [AI in QA: Maturity Curves, the Shared Brain, and the OpenTelemetry Blindspot](https://kidakaka.com/2026/08/21/ai-in-qa-maturity-curves-shared-brain-and-opentelemetry/)
+- **Date**: 21 August 2026
+- **Categories**: Technology, Work
+- **Summary**: Insights from a closed-door boardroom roundtable on AI in QA with tier-1 financial institutions: the 4-level maturity curve, validation of the Shared Brain architecture, and why everyone is ignoring OpenTelemetry.
+
+### [AI in Indian WealthTech & Micro-Lending: Beyond the Chatbot Hype](https://kidakaka.com/2026/08/12/ai-in-indian-wealthtech-and-microlending-beyond-the-chatbot-hype/)
+- **Date**: 12 August 2026
+- **Categories**: Business, Technology
+- **Summary**: Conversational AI chatbots are the least interesting application of AI in finance. The real transformation in Indian credit and WealthTech is happening in back-office engines processing unstructured GST, banking, and underwriting data.
+
+### [Deterministic AI: Why I Replaced Vector DBs with Git & Markdown](https://kidakaka.com/2026/08/10/deterministic-ai-why-i-replaced-vector-dbs-with-git-and-markdown/)
+- **Date**: 10 August 2026
+- **Categories**: Technology, Work
+- **Summary**: Vector search promises infinite semantic memory for AI agents, but in production it introduces non-determinism, context fragmentation, and opaque debugging. Here is why we switched our agent memory to Git and Markdown.
+
+### [My Experience at the Entrepreneur Future Summit 2026, Pune](https://kidakaka.com/2026/07/03/entrepreneur-future-summit-pune/)
+- **Date**: 3 July 2026
+- **Categories**: Business, Technology
+- **Summary**: I attended the Entrepreneur Future Summit in Pune, diving into practical applications of AI, scalable frameworks, and insights from global founders. Here's a recap of the best sessions and networking highlights.
+
+### [How I Built a Shared Brain for My AI Agents](https://kidakaka.com/2026/06/09/how-i-built-a-shared-brain-for-my-ai-agents/)
+- **Date**: 9 June 2026
+- **Categories**: Technology, Work
+- **Summary**: The usual workarounds for AI memory are brittle. What I needed was a shared external memory that any agent could read and write. Here's how I built a two-layer memory architecture using GitHub and GitLab.
+
+### [I Built an AI "Second Opinion" System for My Own Health — Here's How It Works](https://kidakaka.com/2026/06/08/ai-health-copilot/)
+- **Date**: 8 June 2026
+- **Categories**: Technology, Health
+- **Summary**: I got tired of walking out of a doctor's appointment wondering if it was the right call. So I built an AI-powered personal health memory system to cross-reference prescriptions against global evidence-based medicine.
+
+### [The Git-Backed Brain: Using a Repo as Shared Agent Memory](https://kidakaka.com/2026/05/31/the-git-backed-brain/)
+- **Date**: 31 May 2026
+- **Categories**: Technology, Work
+- **Summary**: If you're using multiple AI agents to get work done, you quickly run into a context fragmentation problem. The solution isn't a complex vector database. It's a simple GitHub repository.
+
+### [Harnessing the Harness](https://kidakaka.com/2026/04/26/harnessing-the-harness/)
+- **Date**: 26 April 2026
+- **Categories**: Technology
+- **Summary**: The model is not the hard part of agentic AI. The hard part is the scaffolding around it — the harness that intercepts tool calls, routes decisions, handles failures, and keeps the whole thing from careening off the rails.
+
+### [Your AI Dream Team: Mastering Agentic Publishing with Claude](https://kidakaka.com/2026/03/07/your-ai-dream-team-mastering-agentic-publishing-with-claude/)
+- **Date**: 7 March 2026
+- **Categories**: Technology, Work
+- **Summary**: Instead of a single, one-off request, agentic publishing involves orchestrating multiple specialised AI roles — researcher, writer, editor, strategist — within a single intelligent system. Here’s how Claude makes it work.
+
+### [From Code Monkey to Co-Founder: How My AI Prompts Have Aged](https://kidakaka.com/2026/01/25/from-code-monkey-to-co-founder-how-my-ai-prompts-have-aged/)
+- **Date**: 25 January 2026
+- **Categories**: Work, Technology
+- **Summary**: Looking back at my AI prompt history reveals a dramatic shift — from writing regex patterns to positioning fintech platforms as ecosystem plays. AI is eating my operational bottlenecks.
+
+### [Antigravity and the One-Hour Laravel Blog](https://kidakaka.com/2026/01/25/antigravity-and-the-one-hour-laravel-blog/)
+- **Date**: 25 January 2026
+- **Categories**: Technology, Web
+- **Summary**: After moving on from WordPress I tested Google’s Antigravity AI coding tool to get a barebones Laravel blog running. The complete implementation — admin panel, frontend, tagging — was done in under an hour.
+
+## 2025 (2 articles)
+
+### [Juhu Marathon 2025](https://kidakaka.com/2025/02/09/juhu-marathon-2025/)
+- **Date**: 9 February 2025
+- **Categories**: Sports, Life
+- **Summary**: My second year at the Juhu Marathon’s 4 km dream run. Over a thousand participants, a chaotic scramble that felt like catching a Mumbai local, and a reminder that showing up is the whole point.
+
+### [Indian Financial Service and General Post Office](https://kidakaka.com/2025/02/01/indian-financial-service-and-general-post-office/)
+- **Date**: 1 February 2025
+- **Categories**: Business, Work
+- **Summary**: A visit to collect a parcel turned into a front-row seat to Post Office Savings Bank in action — and a reminder that 130 years of trust still beats a slick app.
+
+## 2024 (7 articles)
+
+### [Goodbye WordPress!](https://kidakaka.com/2024/11/24/goodbye-wordpress/)
+- **Date**: 24 November 2024
+- **Categories**: Personal, News
+- **Summary**: The licensing disputes and Automattic’s reaction left a bad taste. After evaluating alternatives I’ve settled on Textpattern — and a new markup language to learn called Textile.
+
+### [Citizenship in a Democracy](https://kidakaka.com/2024/06/16/citizenship-in-a-democracy/)
+- **Date**: 16 June 2024
+- **Categories**: Thoughts, Business
+- **Summary**: Mumbai’s voter turnout was under 30% at 1 pm on election day. Heat, long weekends and indifferent employers are easy excuses — but citizenship means more than standing in a queue.
+
+### [Setting Up a Healthy Engineering Culture: A Blueprint for Success](https://kidakaka.com/2024/03/31/setting-up-a-healthy-engineering-culture-a-blueprint-for-success/)
+- **Date**: 31 March 2024
+- **Categories**: Work, Technology
+- **Summary**: Engineering culture is the shared values and practices that define how a team works. A strong culture recruits great people and keeps them — here’s what to build it around.
+
+### [Vanity Metrics: What They Are and Why You Should Avoid Them](https://kidakaka.com/2024/03/08/vanity-metrics-what-they-are-and-why-you-should-avoid-them/)
+- **Date**: 8 March 2024
+- **Categories**: Business, Analytics
+- **Summary**: Vanity metrics make you look good to others but don’t inform future strategy. Here’s how to tell them apart from the numbers that actually matter.
+
+### [Generative AI in Lending](https://kidakaka.com/2024/03/05/generative-ai-in-lending/)
+- **Date**: 5 March 2024
+- **Categories**: Technology, Work
+- **Summary**: India’s lending market is projected to grow from $1.2 trillion to $3.5 trillion. Generative AI can automate underwriting, catch fraud and open new product categories — but smart solutions are still rare.
+
+### [Playing Skyrim with Mods After a Decade](https://kidakaka.com/2024/03/04/playing-skyrim-with-mods-after-a-decade/)
+- **Date**: 4 March 2024
+- **Categories**: Games
+- **Summary**: The Elder Scrolls V: Skyrim came out in November 2011. It sold over 30 million copies and became renowned for its open-world design, rich lore, and deeply immersive gameplay. More than a decade later, it is still being played — and a large reason for that is modding.
+
+### [Customizing WordPress to Work Like Confluence](https://kidakaka.com/2024/02/25/customizing-wordpress-to-work-like-confluence/)
+- **Date**: 25 February 2024
+- **Categories**: Web, Work
+- **Summary**: At Homeville, when the technology team expanded from 4 to 65+ members, licensing costs for JIRA and Confluence became unsustainable. JIRA charged approximately $400 USD monthly beyond the first 10 users, while Confluence’s expenses were rivalling our AWS bills.
+
+## 2023 (3 articles)
+
+### [WordCamp Ahmedabad 2023](https://kidakaka.com/2023/12/16/wordcamp-ahmedabad-2023/)
+- **Date**: 16 December 2023
+- **Categories**: Personal, Web
+- **Summary**: After WordCamp Mumbai earlier in the year I decided to keep attending WordCamps across India. Ahmedabad came up quickly on the calendar, and I brought Harshaja along, hoping she would connect with WordPress agencies for 13 Llama’s development needs. The schedule looked genuinely compelling.
+
+### [WordCamp Mumbai 2023](https://kidakaka.com/2023/11/25/wordcamp-mumbai-2023/)
+- **Date**: 25 November 2023
+- **Categories**: Personal, Web
+- **Summary**: My journey with WordPress started at the 2015 Mumbai WordPress meetup — one I attended with some hesitation back in 2014. At that time my understanding of WordPress was limited. The experience turned out to be transformative.
+
+### [How to Setup Microsoft Word to Post to WordPress](https://kidakaka.com/2023/09/09/how-to-setup-microsoft-word-to-post-to-wordpress/)
+- **Date**: 9 September 2023
+- **Categories**: Technology, Web
+- **Summary**: WordPress’s Gutenberg editor offers a pleasant user experience similar to Medium, but I find it frustrating that advanced options have been quietly hidden in the pursuit of simplicity. After a year-long writing hiatus I discovered something worth sharing: Microsoft Word can publish directly to WordPress.
+
+## 2022 (2 articles)
+
+### [Why ChatGPT is Going to Change Inbound Marketing](https://kidakaka.com/2022/12/22/why-chatgpt-is-going-to-change-inbound-marketing/)
+- **Date**: 22 December 2022
+- **Categories**: Business, Technology
+- **Summary**: GPT-3 — OpenAI’s language generation model — is capable of producing text that resembles human writing with remarkable fidelity. Its applications for inbound marketing, particularly through chatbot technology, are worth taking seriously.
+
+### [Nitropack Review](https://kidakaka.com/2022/07/27/nitropack-review/)
+- **Date**: 27 July 2022
+- **Categories**: Web, Technology
+- **Summary**: Those managing content management systems face a persistent challenge: improving site loading speed without adding complexity. Solutions range from server-side opcache modules to WordPress-specific tools like WP-Supercache. For non-technical webmasters, picking the right approach is genuinely difficult.
+
+## 2021 (1 articles)
+
+### [Getting Started with R](https://kidakaka.com/2021/03/19/getting-started-with-r/)
+- **Date**: 19 March 2021
+- **Categories**: Analytics
+- **Summary**: I started teaching business school courses in 2017–18. I chose R as my teaching tool for analytics rather than focusing heavily on theory — the goal was applied learning. Instructing a scripting language to students with no coding experience requires breaking down fundamentals like variables, loops, and libraries into digestible pieces. Here’s what I learned about what works.
+
+## 2020 (5 articles)
+
+### [Reduction in Stamp Duty Rates](https://kidakaka.com/2020/08/29/reduction-in-stamp-duty-rates/)
+- **Date**: 29 August 2020
+- **Categories**: Work, Business
+- **Summary**: Stamp duty is an additional charge levied when purchasing a home in India. Depending on the state, it is payable at different stages of the transaction. Maharashtra requires upfront payment during the down payment phase, while Karnataka and Telangana collect it upon possession.
+
+### [Building Your Custom Connector on Google Data Studio](https://kidakaka.com/2020/08/29/building-your-custom-connector-on-google-data-studio/)
+- **Date**: 29 August 2020
+- **Categories**: Analytics, Web
+- **Summary**: This is a technical post. Comfort with code — specifically JavaScript and Google App Scripts — is assumed.
+
+### [6 Months of Lockdown](https://kidakaka.com/2020/08/09/6-months-of-lockdown/)
+- **Date**: 9 August 2020
+- **Categories**: Life, Work
+- **Summary**: Six months in and the shifts are real. Not temporary adjustments — actual structural changes to how work, infrastructure, and daily life operate.
+
+### [Life and Opportunities Post COVID-19](https://kidakaka.com/2020/04/27/life-and-opportunities-post-covid-19/)
+- **Date**: 27 April 2020
+- **Categories**: Life, Work
+- **Summary**: Two months into the pandemic-related remote work transition, patterns are beginning to emerge. Some are positive. Some are not.
+
+### [Work from Home: The New Norm](https://kidakaka.com/2020/04/02/work-from-home-the-new-norm/)
+- **Date**: 2 April 2020
+- **Categories**: Work, Life
+- **Summary**: As if taken from a zombiecalypse movie, the coronavirus outbreak has impacted the entire world in a significant way. Without meeting people, how does work get done?
+
+## 2019 (3 articles)
+
+### [Working with Markdown and GitBook](https://kidakaka.com/2019/08/30/working-with-markdown-and-gitbook/)
+- **Date**: 30 August 2019
+- **Categories**: Work, Technology
+- **Summary**: When I transitioned to leading the tech team at Homeville, the challenge of managing documentation across multiple microservices became immediately apparent. Different repositories, different languages, different hosting environments — and no single place where a new developer could get oriented quickly.
+
+### [Data, Reporting and Doing What's Right](https://kidakaka.com/2019/06/19/data-reporting-and-doing-whats-right/)
+- **Date**: 19 June 2019
+- **Categories**: Business, Analytics
+- **Summary**: Data is being used to showcase that value has been generated. To do this, the most beautiful reports are created. If you follow Avinash Kaushik and dislike data pukes, you would be aghast at some of the reports agencies in India dish out.
+
+### [Data the New Oil](https://kidakaka.com/2019/06/15/data-the-new-oil/)
+- **Date**: 15 June 2019
+- **Categories**: Analytics, Business
+- **Summary**: Data and business analysis was until recently a support function — it needed business data to be useful, but the data itself was not the product. The analysis was. That has changed. Data is now being presented and sold as the main product.
+
+## 2018 (12 articles)
+
+### [Why You Need to Stop Tracking These 5 Metrics](https://kidakaka.com/2018/12/14/why-you-need-to-stop-tracking-these-5-metrics/)
+- **Date**: 14 December 2018
+- **Categories**: Business, Analytics
+- **Summary**: Going digital grants brands access to substantial data volumes. That abundance often leads teams into an obsessive pursuit of metrics without questioning whether those metrics actually matter.
+
+### [Gold](https://kidakaka.com/2018/11/02/gold/)
+- **Date**: 2 November 2018
+- **Categories**: Movies
+- **Summary**: I had recently been reading Shashi Tharoor’s An Era of Darkness: The British Empire in India when I came across the film Gold on Amazon Prime. The combination of timing and subject matter made it feel like required viewing.
+
+### [AMP and Advertising](https://kidakaka.com/2018/08/11/amp-and-advertising/)
+- **Date**: 11 August 2018
+- **Categories**: Ads, Business
+- **Summary**: This blog has accumulated steady readership over seven or eight years, which gives me a useful vantage point on how blogging monetisation has transformed — particularly with mobile becoming the dominant consumption device.
+
+### [Comfort Zones](https://kidakaka.com/2018/08/05/comfort-zones/)
+- **Date**: 5 August 2018
+- **Categories**: Business, Work
+- **Summary**: I typically write about technology, gaming, and analytics on this blog. I have a certain unhealthy fear of engaging with design work. Analytical work has become comfortable territory, and that comfort has created a mental barrier against creative pursuits.
+
+### [Why Does a Non-Football Fan Like Me Still Watch the World Cup 2018?](https://kidakaka.com/2018/07/08/why-does-a-non-football-fan-like-me-still-watch-the-world-cup-2018/)
+- **Date**: 8 July 2018
+- **Categories**: Sports, Life
+- **Summary**: I am not a football enthusiast. I find myself watching the 2018 World Cup anyway. The reason is simple: I am genuinely moved by ordinary individuals accomplishing extraordinary things, and Belgium’s run in this tournament centres on one such person.
+
+### [Marketing for India2](https://kidakaka.com/2018/06/18/marketing-for-india2/)
+- **Date**: 18 June 2018
+- **Categories**: Ads, Business
+- **Summary**: Nearly a decade into digital marketing, there is a critical gap in how brands engage with India’s emerging online audience: a billion people who may not be comfortable with English, who lack traditional credit infrastructure, and who are now online thanks to affordable connectivity like Jio.
+
+### [Do Androids Dream of Electric Sheep?](https://kidakaka.com/2018/05/18/do-androids-dream-of-electric-sheep/)
+- **Date**: 18 May 2018
+- **Categories**: Movies, Books
+- **Summary**: I first encountered the word “android” as a child, watching Blade Runner. The title of this post is the Philip K. Dick novel that served as the film’s source material. Both the book and its adaptations have aged remarkably well.
+
+### [Are We Over Zealous on Remarketing?](https://kidakaka.com/2018/04/19/are-we-over-zealous-on-remarketing/)
+- **Date**: 19 April 2018
+- **Categories**: Ads, Business
+- **Summary**: Remarketing follows potential customers across websites through ad networks. Like the old Vodafone/Hutch advertisement where the network follows you everywhere — if you visit an e-commerce site, add something to your cart, and then leave, you start seeing that product across Instagram, Facebook, and the Google Display Network.
+
+### [Google Launches Machine Learning for AdSense](https://kidakaka.com/2018/04/15/google-launches-machine-learning-for-adsense/)
+- **Date**: 15 April 2018
+- **Categories**: Ads, Business
+- **Summary**: Google AdSense has existed for over fifteen years, enabling site owners to generate revenue alongside DoubleClick for Publishers. The persistent challenge has always been determining optimal ad placement while preserving user experience and readability.
+
+### [More Information About Samara Oblast](https://kidakaka.com/2018/03/27/more-information-about-samara-oblast/)
+- **Date**: 27 March 2018
+- **Categories**: Ads, Analytics
+- **Summary**: I previously wrote about bot traffic leaving referral signatures on websites — a phenomenon that became widespread. Moz.com subsequently offered guidance on filtering such data from Google Analytics. Traffic spiked initially but normalised over time.
+
+### [Thoughts on Social Media](https://kidakaka.com/2018/02/23/thoughts-on-social-media/)
+- **Date**: 23 February 2018
+- **Categories**: Ads, Business
+- **Summary**: Social media platforms evolve from win-win partnerships with publishers into monopolies. Here is how it happens every time.
+
+### [2018, the Year of Numbers](https://kidakaka.com/2018/01/10/2018-the-year-of-numbers/)
+- **Date**: 10 January 2018
+- **Categories**: Life, Analytics
+- **Summary**: 13 Llama Studio began as a full-service agency accepting all projects — websites, logos, app development, product incubation. While that kept the business active, it diverted focus from what I actually care about: working with numbers and analytics.
+
+## 2017 (14 articles)
+
+### [Using Intelligence Reports in Google Analytics](https://kidakaka.com/2017/12/07/using-intelligence-reports-in-google-analytics/)
+- **Date**: 7 December 2017
+- **Categories**: Analytics, Business
+- **Summary**: Google Analytics continues to evolve, gradually bringing premium features to free-tier users. Intelligence Reports represent one such advancement: the ability to ask questions in natural language and receive meaningful analytical insights in return.
+
+### [Shiny Tools Don't Make a Purpose](https://kidakaka.com/2017/11/10/shiny-tools-dont-make-a-purpose/)
+- **Date**: 10 November 2017
+- **Categories**: Analytics, Business
+- **Summary**: I recently bought a Fitbit. Colleagues asked the obvious question: “Has it changed you?” The honest answer was no.
+
+### [18 Months Down the Line: What Has Google AMP Really Achieved?](https://kidakaka.com/2017/08/24/18-months-down-the-line-what-has-google-amp-really-achieved/)
+- **Date**: 24 August 2017
+- **Categories**: Web, Ads
+- **Summary**: In early 2016, Google launched Accelerated Mobile Pages for publishers seeking faster content delivery on mobile. With 65% of Asian traffic occurring on mobile — particularly in developing nations where slower networks are the norm — the motivation made sense. The execution has been more complicated.
+
+### [Data Anomalies in Search Console](https://kidakaka.com/2017/08/08/data-anomalies-in-search-console/)
+- **Date**: 8 August 2017
+- **Categories**: Business, Analytics
+- **Summary**: Organic traffic has been a key growth driver for online businesses in recent years. Search remains fascinating even when — especially when — the data is incomplete. And it is always incomplete.
+
+### [RJ Malishka, the BMC and the Underlying Breach of Our Freedom](https://kidakaka.com/2017/07/23/rj-malishka-the-bmc-and-the-underlying-breach-of-our-freedom/)
+- **Date**: 23 July 2017
+- **Categories**: Thoughts
+- **Summary**: Red FM’s Mumbai-based RJ Malishka created a video jingle satirising the city’s monsoon-related infrastructure problems. The clip garnered over 3 million views and touched a nerve — precisely because the problems it described were documented and real.
+
+### [A Success/Failure Method for Analytics](https://kidakaka.com/2017/06/24/a-success-failure-method-for-analytics/)
+- **Date**: 24 June 2017
+- **Categories**: Analytics, Work
+- **Summary**: When identifying Key Performance Indicators, selecting appropriate success measures is essential. Most of the work I do occurs in web-based environments, where the fundamental operating principles are consistent. But the approach generalises well beyond the web.
+
+### [Importance of Context in Analysing Data](https://kidakaka.com/2017/06/18/importance-of-context-in-analyzing-data/)
+- **Date**: 18 June 2017
+- **Categories**: Business, Analytics
+- **Summary**: I recently examined user-generated data from a mobile app that delivered content to a niche audience. Users rated each piece with a five-star system, which the design team treated as an objective measurement. The problem: user behaviour is inherently subjective.
+
+### [Shifting from _utmz to _ga](https://kidakaka.com/2017/06/04/shifting-to-utmz-to-ga/)
+- **Date**: 4 June 2017
+- **Categories**: Ads, Analytics
+- **Summary**: I previously wrote about the __utmz cookie — the Google Analytics cookie that stored visitor source attribution data. As Google Analytics evolved from the Urchin tracking system, significant changes occurred in how these cookies function. The utmz cookie no longer exists.
+
+### [Game Theory in Dating: More Towards Understanding Nash's Equilibrium](https://kidakaka.com/2017/06/03/game-theory-in-dating-more-towards-understanding-nashs-equilibrium/)
+- **Date**: 3 June 2017
+- **Categories**: Business, Analytics
+- **Summary**: Game Theory is compelling when applied beyond theoretical economics — to actual human interactions and collective behaviour. I previously explored its application to SEO. Dating turns out to be another rich area.
+
+### [Game Theory and SEO](https://kidakaka.com/2017/05/08/game-theory-and-seo/)
+- **Date**: 8 May 2017
+- **Categories**: Business, Analytics
+- **Summary**: Game theory examines mathematical models of conflict and cooperation between rational decision-makers. It has applications across economics, political science, psychology, logic, computer science, and biology. I want to apply it to SEO.
+
+### [Taking a Look at Jetpack Stats](https://kidakaka.com/2017/04/25/taking-a-look-at-jetpack-stats/)
+- **Date**: 25 April 2017
+- **Categories**: Analytics, Technology
+- **Summary**: I prefer Google Analytics. But I wanted to give Jetpack Stats a fair assessment rather than a dismissive one. Here is what I found.
+
+### [Logan and Wolverine](https://kidakaka.com/2017/03/11/logan-and-wolverine/)
+- **Date**: 11 March 2017
+- **Categories**: Movies
+- **Summary**: When the first X-Men film came out over seventeen years ago, Wolverine was not initially the central role. But over time he became the character the audience most wanted to see, defined by an undeniable bad-ass quality that Hugh Jackman embodied with unusual conviction.
+
+### [Using Data Studio to Create Beautiful Reports](https://kidakaka.com/2017/01/31/using-data-studio-to-create-beautiful-reports/)
+- **Date**: 31 January 2017
+- **Categories**: Analytics, Business
+- **Summary**: In November 2016 Google Data Studio became accessible to all users in India. Previously limited to US users and Google Analytics 360 premium subscribers, the product now allows anyone to create dazzling reports that can be shared with teams and clients. Here is how to get started.
+
+### [The Case of the Missing Engagement Glue](https://kidakaka.com/2017/01/16/the-case-of-the-missing-engagement-glue/)
+- **Date**: 16 January 2017
+- **Categories**: Business, Life
+- **Summary**: In December 2016, my family’s flight from Mumbai to Gwalior was cancelled due to fog. What followed was a month-long ordeal involving Air India, Cleartrip, and an almost total absence of what I can only call engagement glue — the human empathy that gets things done when processes fail.
+
+## 2016 (4 articles)
+
+### [Moana the Movie and Climate Change](https://kidakaka.com/2016/12/25/moana-the-movie-and-climate-change/)
+- **Date**: 25 December 2016
+- **Categories**: Movies, Thoughts
+- **Summary**: This Christmas I took my children to see Moana. One was thoroughly engaged; the other lost interest midway. It is family entertainment that works on multiple levels.
+
+### [2016 – A Year in Review](https://kidakaka.com/2016/12/19/2016-a-year-in-review/)
+- **Date**: 19 December 2016
+- **Categories**: Thoughts, Life
+- **Summary**: 2016 was a year of difficult choices and useful lessons. Here is an honest account of both.
+
+### [Dr. Strange and the Case of Disabling Constructs](https://kidakaka.com/2016/12/12/dr-strange-and-the-case-of-disabling-constructs/)
+- **Date**: 12 December 2016
+- **Categories**: Movies, Life
+- **Summary**: Dr. Strange is one of Marvel’s top-grossing single-hero films. Benedict Cumberbatch excels at playing roles with strong character — Dr. Strange both before and after his transformation gives him full range. This post is not a movie review. It is about the mental models the film deploys.
+
+### [Creating a Kickass Campaign #LikeAGirl](https://kidakaka.com/2016/02/25/creating-a-kickass-campaign-likeagirl/)
+- **Date**: 25 February 2016
+- **Categories**: Business, Ads
+- **Summary**: At a recent meeting where the think tank team of a large organisation was discussing branding, an ex-Ogilvy speaker made a point that stuck with me: building a brand that supports a larger cause is the most powerful thing a company can do.
+
+## 2015 (3 articles)
+
+### [Ajaya Series](https://kidakaka.com/2015/12/30/ajaya-series/)
+- **Date**: 30 December 2015
+- **Categories**: Books
+- **Summary**: History is written by the winners. The Mahabharata — one of the most complex and nuanced epics in human literature — is no exception. The Ajaya series takes that premise seriously.
+
+### [Constantinopolis](https://kidakaka.com/2015/12/20/constantinopolis/)
+- **Date**: 20 December 2015
+- **Categories**: Books
+- **Summary**: Constantinopolis by James D. Shipman is a historical fiction account of the fall of Constantinople to Ottoman forces in 1453 — one of the most consequential events in medieval history and a moment that effectively ended the Byzantine Empire after more than a thousand years.
+
+### [The Mahabharata Quest: The Alexander Secret](https://kidakaka.com/2015/12/14/the-mahabharata-quest-the-alexander-secret/)
+- **Date**: 14 December 2015
+- **Categories**: Books
+- **Summary**: The Mahabharata Quest: The Alexander Secret by Christopher C. Doyle is an ambitious thriller that attempts to bridge two worlds — the ancient Indian epic and the military campaigns of Alexander the Great — through a contemporary adventure narrative.
+
+## 2013 (1 articles)
+
+### [Understanding the __utmz Google Analytics Cookie](https://kidakaka.com/2013/01/06/understanding-the-utmz-google-analytics-cookie/)
+- **Date**: 6 January 2013
+- **Categories**: Technology, Analytics
+- **Summary**: The __utmz cookie is the Google Analytics traffic source cookie. It stores information about where a visitor came from — the source, medium, campaign, and keyword that brought them to your site. Understanding what it contains and how to read it is essential for anyone doing serious web analytics work.
+
+## 2008 (24 articles)
+
+### [I Am Sapped](https://kidakaka.com/2008/04/11/i-am-sapped/)
+- **Date**: 11 April 2008
+- **Categories**: Life, Thoughts
+- **Summary**: There are weeks that drain you completely. Not from any single dramatic event, but from the accumulated weight of small decisions, small disappointments, and the relentless forward motion that life demands even when you would rather stop.
+
+### [Faith](https://kidakaka.com/2008/04/07/faith/)
+- **Date**: 7 April 2008
+- **Categories**: Thoughts, Life
+- **Summary**: Faith is a word that gets used in two very different ways, and confusing them causes a lot of unnecessary argument. There is faith as a religious or spiritual concept, and there is faith as a practical operating principle — the willingness to act before you have proof.
+
+### [D-Wars](https://kidakaka.com/2008/04/04/d-wars/)
+- **Date**: 4 April 2008
+- **Categories**: Movies
+- **Summary**: D-Wars (Dragon Wars) is a South Korean monster film that made it to international screens on the strength of its visual effects budget and the universal appeal of giant creatures destroying city blocks. It is exactly what it looks like: an effects showcase with a story attached to justify the destruction.
+
+### [5 Years Hence](https://kidakaka.com/2008/04/04/5-years-hence/)
+- **Date**: 4 April 2008
+- **Categories**: Thoughts, Life
+- **Summary**: Five years is an interesting unit of time to think about. Short enough to feel concrete, long enough to allow for genuine transformation. Where will you be in five years? What will you have built, broken, learned, abandoned?
+
+### [Nostalgia](https://kidakaka.com/2008/04/02/nostalgia/)
+- **Date**: 2 April 2008
+- **Categories**: Life, Thoughts
+- **Summary**: Nostalgia is a peculiar emotion. It is not quite happiness and not quite sadness — it sits somewhere between them, a kind of sweet ache for things that no longer exist in the form you remember them.
+
+### [My Life Is a Beatles Soundtrack](https://kidakaka.com/2008/03/31/my-life-is-a-beatles-soundtrack/)
+- **Date**: 31 March 2008
+- **Categories**: Music, Life
+- **Summary**: There are bands whose music fits specific moods or phases. And then there is the Beatles, which seems to have written the soundtrack for every possible human experience. I keep discovering this at unexpected moments.
+
+### [Customer Orientation](https://kidakaka.com/2008/03/25/customer-orientation/)
+- **Date**: 25 March 2008
+- **Categories**: Business, Thoughts
+- **Summary**: Every company claims to be customer-oriented. Almost none of them actually are, and the gap between the claim and the reality is one of the most reliable predictors of long-term failure I know.
+
+### [Savalee — The Acorn and the Oak](https://kidakaka.com/2008/03/20/savalee-the-acorn-and-the-oak/)
+- **Date**: 20 March 2008
+- **Categories**: Thoughts, Life
+- **Summary**: The Marathi word savalee means shadow — specifically the pleasant shade cast by a large tree. It carries connotations of shelter, rest, and the kind of cool refuge you seek on a hot afternoon. It is a word with comfort built into it.
+
+### [Stardust](https://kidakaka.com/2008/03/18/stardust/)
+- **Date**: 18 March 2008
+- **Categories**: Movies
+- **Summary**: Stardust is a fairy tale for adults — based on Neil Gaiman and Charles Vess’s illustrated novel — and it is one of the more delightful films to come out of the fantasy genre in years. It does not take itself too seriously, and that lightness is precisely what makes it work.
+
+### [Bandwidth](https://kidakaka.com/2008/03/18/bandwidth/)
+- **Date**: 18 March 2008
+- **Categories**: Technology, Thoughts
+- **Summary**: Bandwidth has become a metaphor as much as a technical term. We talk about personal bandwidth, cognitive bandwidth, emotional bandwidth — and by this we mean the same thing the engineers mean: the capacity to carry information, to process throughput, to handle simultaneous signals without degradation.
+
+### [Juno](https://kidakaka.com/2008/03/08/juno/)
+- **Date**: 8 March 2008
+- **Categories**: Movies
+- **Summary**: Juno is one of those films that should not work as well as it does. A teenage pregnancy comedy with a quirky indie sensibility, written by a former stripper, starring an actress then largely unknown — the components do not obviously add up to something special. And yet.
+
+### [IE8 — We Are Not the Devil Anymore](https://kidakaka.com/2008/03/08/ie8-we-are-not-the-devil-anymore/)
+- **Date**: 8 March 2008
+- **Categories**: Technology
+- **Summary**: Microsoft announced Internet Explorer 8 with a significant commitment: it would pass the Acid2 browser compatibility test in its default rendering mode. For web developers who had spent years cursing IE6 and its creative interpretations of CSS standards, this was news worth paying attention to.
+
+### [IIM Jobs](https://kidakaka.com/2008/02/27/iim-jobs/)
+- **Date**: 27 February 2008
+- **Categories**: Business, Thoughts
+- **Summary**: IIM placement season generates a particular kind of media coverage in India — the annual ritual of astronomical salary figures, investment banking offers, and consulting packages that prompt both celebration and anxiety in equal measure.
+
+### [Valu — The Wild Bull](https://kidakaka.com/2008/02/26/valu-the-wild-bull/)
+- **Date**: 26 February 2008
+- **Categories**: Thoughts, Life
+- **Summary**: Valu is a Marathi word for a wild, uncontrollable bull — one that has broken free of all constraints and moves through the world on pure instinct and energy, without direction or discipline. The word is used to describe people too.
+
+### [Firefox Reaches 500M](https://kidakaka.com/2008/02/22/firefox-reaches-500-m/)
+- **Date**: 22 February 2008
+- **Categories**: Technology
+- **Summary**: Firefox crossed 500 million downloads, and that number deserves a moment of appreciation. Not because download counts are a perfect metric — they are not — but because of what the number represents.
+
+### [Meetings](https://kidakaka.com/2008/02/21/meetings/)
+- **Date**: 21 February 2008
+- **Categories**: Business, Thoughts
+- **Summary**: Meetings are one of the primary ways organisations convert time into noise. This is not a new observation, and the fact that it continues to be true despite decades of complaints suggests that the problem is structural rather than merely cultural.
+
+### [NetHack](https://kidakaka.com/2008/02/19/n3thc/)
+- **Date**: 19 February 2008
+- **Categories**: Technology, Games
+- **Summary**: NetHack is the oldest game I still play and probably the deepest. Released in 1987, still actively developed, still capable of killing you in ways you did not anticipate after hundreds of hours of play. There is nothing else quite like it.
+
+### [Enchanted — Recapturing Innocence Lost](https://kidakaka.com/2008/02/18/enchanted-recapturing-innocence-lost/)
+- **Date**: 18 February 2008
+- **Categories**: Movies
+- **Summary**: Enchanted is a Disney film that requires a certain kind of surrender to enjoy. You have to be willing to let it work on you rather than watching it from a critical distance. If you are, it is genuinely delightful.
+
+### [You’ve Been an MBA for Too Long When…](https://kidakaka.com/2008/02/07/youve-been-an-mba-for-too-long-when/)
+- **Date**: 7 February 2008
+- **Categories**: Business, Humour
+- **Summary**: A lighthearted list for those of us who have spent too much time in business school classrooms or corporate meeting rooms, and have developed certain linguistic and cognitive habits as a result.
+
+### [Fire the Product Placement Guy](https://kidakaka.com/2008/02/07/fire-the-product-placement-guy/)
+- **Date**: 7 February 2008
+- **Categories**: Ads, Movies
+- **Summary**: Product placement in films has a spectrum. At one end, it is seamless — the brand exists in the world of the film the way brands exist in the real world, noticed peripherally and unremarked upon. At the other end, it stops the film dead while a character explains the features of a car or the benefits of a soft drink to no one in particular. The latter is what I want to talk about.
+
+### [Democracy](https://kidakaka.com/2008/01/31/democracy/)
+- **Date**: 31 January 2008
+- **Categories**: Thoughts
+- **Summary**: Churchill’s observation that democracy is the worst form of government except for all the others is often quoted and rarely examined. It is worth examining.
+
+### [God as a Brand](https://kidakaka.com/2008/01/24/god-as-a-brand/)
+- **Date**: 24 January 2008
+- **Categories**: Thoughts, Business
+- **Summary**: If you apply brand strategy thinking to religion — purely as an analytical exercise, setting aside the metaphysical questions entirely — you find that the major world religions are extraordinarily sophisticated brand operations that have maintained market relevance across centuries and civilisations.
+
+### [Life as We Know It](https://kidakaka.com/2008/01/22/life-as-we-know-it/)
+- **Date**: 22 January 2008
+- **Categories**: Thoughts, Life
+- **Summary**: There are moments where you step back from the routine and notice it from the outside — the particular shape of your days, the habits and relationships and small choices that have accumulated into what is, for better or worse, your life.
+
+### [Lights Out](https://kidakaka.com/2008/01/16/lights-out/)
+- **Date**: 16 January 2008
+- **Categories**: Thoughts, Life
+- **Summary**: This is the first post on this blog. It seems appropriate to begin with something honest about what a blog is and what this one is supposed to be.

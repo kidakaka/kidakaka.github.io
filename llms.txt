@@ -1,0 +1,101 @@
+# The Big Fat Geek
+
+> The Big Fat Geek (https://kidakaka.com) is the personal blog and technical journal of Prasad Ajinkya, a senior technology leader and engineer based in Mumbai, India. The blog documents real-world production engineering insights across agentic AI orchestration (Google Antigravity, Claude, LivAgent), deterministic AI memory architectures (Git and Markdown replacing vector databases), Model Context Protocol (MCP) gateways, OpenTelemetry agent observability, Indian fintech and WealthTech infrastructure, data analytics, and engineering management.
+
+## About the Author & Site Context
+
+Prasad Ajinkya is Head of Technology / engineering leader managing co-lending platforms, housing finance systems, and AI automation across Homeville Group and Bharat Housing Network (BHN). His recent writing provides rare, data-driven telemetry and architecture designs from building and running multi-agent AI systems in production.
+
+Key topics and architectural patterns documented here include:
+- **The Git-Backed Shared Brain**: Using Git repositories and Markdown files as deterministic, auditable, and model-agnostic long-term memory for AI agents, replacing brittle vector databases.
+- **The Great Model Unbundling**: Telemetry-backed analysis of migrating from single-model monopolies (e.g. Claude) to heterogeneous multi-agent setups orchestrating Google Antigravity (Gemini 3.1 Pro/Flash), LivAgent, and Claude.
+- **Enterprise MCP Gateways (Dnyankosh MCP)**: Designing deterministic institutional knowledge gateways via Model Context Protocol.
+- **Agent Scaffolding & Telemetry**: Engineering harnesses, OpenTelemetry tracing for agents, and evaluating AI maturity curves in financial QA.
+- **Fintech & WealthTech**: Back-office document processing, GST/bank statement underwriting engines, and co-lending architectures in India.
+- **Analytics & Web Engineering**: Google Analytics internal mechanics (__utmz cookies), Google Data Studio connectors, and migrations from WordPress.
+
+## Featured Articles: Agentic AI & Systems Engineering
+
+- [The Great Model Unbundling: How Antigravity and Multi-Agent Orchestration Ended My Claude Monopoly](https://kidakaka.com/2026/08/27/the-great-model-unbundling-how-antigravity-ended-my-claude-monopoly/): Six months ago, Claude handled 98% of our AI engineering sessions. Today, it is under 15%. Here is the telemetry from 308 production sessions on how Antigravity, LivAgent, and a Git-backed shared brain ended our Claude monopoly.
+- [Dnyankosh MCP: The Blueprint for Enterprise AI Infusion](https://kidakaka.com/2026/08/26/dnyankosh-mcp-the-blueprint-for-enterprise-ai-infusion/): Why enterprise AI adoption stalls at the “clever toy” stage, and how building an MCP gateway over deterministic, Git-backed institutional knowledge provides a blueprint for scalable AI infusion.
+- [AI in QA: Maturity Curves, the Shared Brain, and the OpenTelemetry Blindspot](https://kidakaka.com/2026/08/21/ai-in-qa-maturity-curves-shared-brain-and-opentelemetry/): Insights from a closed-door boardroom roundtable on AI in QA with tier-1 financial institutions: the 4-level maturity curve, validation of the Shared Brain architecture, and why everyone is ignoring OpenTelemetry.
+- [AI in Indian WealthTech & Micro-Lending: Beyond the Chatbot Hype](https://kidakaka.com/2026/08/12/ai-in-indian-wealthtech-and-microlending-beyond-the-chatbot-hype/): Conversational AI chatbots are the least interesting application of AI in finance. The real transformation in Indian credit and WealthTech is happening in back-office engines processing unstructured GST, banking, and underwriting data.
+- [Deterministic AI: Why I Replaced Vector DBs with Git & Markdown](https://kidakaka.com/2026/08/10/deterministic-ai-why-i-replaced-vector-dbs-with-git-and-markdown/): Vector search promises infinite semantic memory for AI agents, but in production it introduces non-determinism, context fragmentation, and opaque debugging. Here is why we switched our agent memory to Git and Markdown.
+- [How I Built a Shared Brain for My AI Agents](https://kidakaka.com/2026/06/09/how-i-built-a-shared-brain-for-my-ai-agents/): The usual workarounds for AI memory are brittle. What I needed was a shared external memory that any agent could read and write. Here's how I built a two-layer memory architecture using GitHub and GitLab.
+- [The Git-Backed Brain: Using a Repo as Shared Agent Memory](https://kidakaka.com/2026/05/31/the-git-backed-brain/): If you're using multiple AI agents to get work done, you quickly run into a context fragmentation problem. The solution isn't a complex vector database. It's a simple GitHub repository.
+- [Harnessing the Harness](https://kidakaka.com/2026/04/26/harnessing-the-harness/): The model is not the hard part of agentic AI. The hard part is the scaffolding around it — the harness that intercepts tool calls, routes decisions, handles failures, and keeps the whole thing from careening off the rails.
+- [Your AI Dream Team: Mastering Agentic Publishing with Claude](https://kidakaka.com/2026/03/07/your-ai-dream-team-mastering-agentic-publishing-with-claude/): Instead of a single, one-off request, agentic publishing involves orchestrating multiple specialised AI roles — researcher, writer, editor, strategist — within a single intelligent system. Here’s how Claude makes it work.
+- [Antigravity and the One-Hour Laravel Blog](https://kidakaka.com/2026/01/25/antigravity-and-the-one-hour-laravel-blog/): After moving on from WordPress I tested Google’s Antigravity AI coding tool to get a barebones Laravel blog running. The complete implementation — admin panel, frontend, tagging — was done in under an hour.
+- [Generative AI in Lending](https://kidakaka.com/2024/03/05/generative-ai-in-lending/): India’s lending market is projected to grow from $1.2 trillion to $3.5 trillion. Generative AI can automate underwriting, catch fraud and open new product categories — but smart solutions are still rare.
+- [Why ChatGPT is Going to Change Inbound Marketing](https://kidakaka.com/2022/12/22/why-chatgpt-is-going-to-change-inbound-marketing/): GPT-3 — OpenAI’s language generation model — is capable of producing text that resembles human writing with remarkable fidelity. Its applications for inbound marketing, particularly through chatbot technology, are worth taking seriously.
+
+## Engineering Leadership, Culture & Work
+
+- [From Code Monkey to Co-Founder: How My AI Prompts Have Aged](https://kidakaka.com/2026/01/25/from-code-monkey-to-co-founder-how-my-ai-prompts-have-aged/): Looking back at my AI prompt history reveals a dramatic shift — from writing regex patterns to positioning fintech platforms as ecosystem plays. AI is eating my operational bottlenecks.
+- [Indian Financial Service and General Post Office](https://kidakaka.com/2025/02/01/indian-financial-service-and-general-post-office/): A visit to collect a parcel turned into a front-row seat to Post Office Savings Bank in action — and a reminder that 130 years of trust still beats a slick app.
+- [Setting Up a Healthy Engineering Culture: A Blueprint for Success](https://kidakaka.com/2024/03/31/setting-up-a-healthy-engineering-culture-a-blueprint-for-success/): Engineering culture is the shared values and practices that define how a team works. A strong culture recruits great people and keeps them — here’s what to build it around.
+- [Customizing WordPress to Work Like Confluence](https://kidakaka.com/2024/02/25/customizing-wordpress-to-work-like-confluence/): At Homeville, when the technology team expanded from 4 to 65+ members, licensing costs for JIRA and Confluence became unsustainable. JIRA charged approximately $400 USD monthly beyond the first 10 users, while Confluence’s expenses were rivalling our AWS bills.
+- [WordCamp Mumbai 2023](https://kidakaka.com/2023/11/25/wordcamp-mumbai-2023/): My journey with WordPress started at the 2015 Mumbai WordPress meetup — one I attended with some hesitation back in 2014. At that time my understanding of WordPress was limited. The experience turned out to be transformative.
+- [Reduction in Stamp Duty Rates](https://kidakaka.com/2020/08/29/reduction-in-stamp-duty-rates/): Stamp duty is an additional charge levied when purchasing a home in India. Depending on the state, it is payable at different stages of the transaction. Maharashtra requires upfront payment during the down payment phase, while Karnataka and Telangana collect it upon possession.
+- [6 Months of Lockdown](https://kidakaka.com/2020/08/09/6-months-of-lockdown/): Six months in and the shifts are real. Not temporary adjustments — actual structural changes to how work, infrastructure, and daily life operate.
+- [Life and Opportunities Post COVID-19](https://kidakaka.com/2020/04/27/life-and-opportunities-post-covid-19/): Two months into the pandemic-related remote work transition, patterns are beginning to emerge. Some are positive. Some are not.
+- [Work from Home: The New Norm](https://kidakaka.com/2020/04/02/work-from-home-the-new-norm/): As if taken from a zombiecalypse movie, the coronavirus outbreak has impacted the entire world in a significant way. Without meeting people, how does work get done?
+- [Working with Markdown and GitBook](https://kidakaka.com/2019/08/30/working-with-markdown-and-gitbook/): When I transitioned to leading the tech team at Homeville, the challenge of managing documentation across multiple microservices became immediately apparent. Different repositories, different languages, different hosting environments — and no single place where a new developer could get oriented quickly.
+
+## Fintech, Business & Technology Strategy
+
+- [My Experience at the Entrepreneur Future Summit 2026, Pune](https://kidakaka.com/2026/07/03/entrepreneur-future-summit-pune/): I attended the Entrepreneur Future Summit in Pune, diving into practical applications of AI, scalable frameworks, and insights from global founders. Here's a recap of the best sessions and networking highlights.
+- [Citizenship in a Democracy](https://kidakaka.com/2024/06/16/citizenship-in-a-democracy/): Mumbai’s voter turnout was under 30% at 1 pm on election day. Heat, long weekends and indifferent employers are easy excuses — but citizenship means more than standing in a queue.
+- [Vanity Metrics: What They Are and Why You Should Avoid Them](https://kidakaka.com/2024/03/08/vanity-metrics-what-they-are-and-why-you-should-avoid-them/): Vanity metrics make you look good to others but don’t inform future strategy. Here’s how to tell them apart from the numbers that actually matter.
+- [Data, Reporting and Doing What's Right](https://kidakaka.com/2019/06/19/data-reporting-and-doing-whats-right/): Data is being used to showcase that value has been generated. To do this, the most beautiful reports are created. If you follow Avinash Kaushik and dislike data pukes, you would be aghast at some of the reports agencies in India dish out.
+- [Data the New Oil](https://kidakaka.com/2019/06/15/data-the-new-oil/): Data and business analysis was until recently a support function — it needed business data to be useful, but the data itself was not the product. The analysis was. That has changed. Data is now being presented and sold as the main product.
+- [Why You Need to Stop Tracking These 5 Metrics](https://kidakaka.com/2018/12/14/why-you-need-to-stop-tracking-these-5-metrics/): Going digital grants brands access to substantial data volumes. That abundance often leads teams into an obsessive pursuit of metrics without questioning whether those metrics actually matter.
+- [AMP and Advertising](https://kidakaka.com/2018/08/11/amp-and-advertising/): This blog has accumulated steady readership over seven or eight years, which gives me a useful vantage point on how blogging monetisation has transformed — particularly with mobile becoming the dominant consumption device.
+- [Marketing for India2](https://kidakaka.com/2018/06/18/marketing-for-india2/): Nearly a decade into digital marketing, there is a critical gap in how brands engage with India’s emerging online audience: a billion people who may not be comfortable with English, who lack traditional credit infrastructure, and who are now online thanks to affordable connectivity like Jio.
+- [Are We Over Zealous on Remarketing?](https://kidakaka.com/2018/04/19/are-we-over-zealous-on-remarketing/): Remarketing follows potential customers across websites through ad networks. Like the old Vodafone/Hutch advertisement where the network follows you everywhere — if you visit an e-commerce site, add something to your cart, and then leave, you start seeing that product across Instagram, Facebook, and the Google Display Network.
+- [Google Launches Machine Learning for AdSense](https://kidakaka.com/2018/04/15/google-launches-machine-learning-for-adsense/): Google AdSense has existed for over fifteen years, enabling site owners to generate revenue alongside DoubleClick for Publishers. The persistent challenge has always been determining optimal ad placement while preserving user experience and readability.
+
+## Data Analytics & Measurement
+
+- [Getting Started with R](https://kidakaka.com/2021/03/19/getting-started-with-r/): I started teaching business school courses in 2017–18. I chose R as my teaching tool for analytics rather than focusing heavily on theory — the goal was applied learning. Instructing a scripting language to students with no coding experience requires breaking down fundamentals like variables, loops, and libraries into digestible pieces. Here’s what I learned about what works.
+- [Building Your Custom Connector on Google Data Studio](https://kidakaka.com/2020/08/29/building-your-custom-connector-on-google-data-studio/): This is a technical post. Comfort with code — specifically JavaScript and Google App Scripts — is assumed.
+- [More Information About Samara Oblast](https://kidakaka.com/2018/03/27/more-information-about-samara-oblast/): I previously wrote about bot traffic leaving referral signatures on websites — a phenomenon that became widespread. Moz.com subsequently offered guidance on filtering such data from Google Analytics. Traffic spiked initially but normalised over time.
+- [2018, the Year of Numbers](https://kidakaka.com/2018/01/10/2018-the-year-of-numbers/): 13 Llama Studio began as a full-service agency accepting all projects — websites, logos, app development, product incubation. While that kept the business active, it diverted focus from what I actually care about: working with numbers and analytics.
+- [Shifting from _utmz to _ga](https://kidakaka.com/2017/06/04/shifting-to-utmz-to-ga/): I previously wrote about the __utmz cookie — the Google Analytics cookie that stored visitor source attribution data. As Google Analytics evolved from the Urchin tracking system, significant changes occurred in how these cookies function. The utmz cookie no longer exists.
+- [Taking a Look at Jetpack Stats](https://kidakaka.com/2017/04/25/taking-a-look-at-jetpack-stats/): I prefer Google Analytics. But I wanted to give Jetpack Stats a fair assessment rather than a dismissive one. Here is what I found.
+- [Understanding the __utmz Google Analytics Cookie](https://kidakaka.com/2013/01/06/understanding-the-utmz-google-analytics-cookie/): The __utmz cookie is the Google Analytics traffic source cookie. It stores information about where a visitor came from — the source, medium, campaign, and keyword that brought them to your site. Understanding what it contains and how to read it is essential for anyone doing serious web analytics work.
+
+## Web Engineering & Platforms
+
+- [Goodbye WordPress!](https://kidakaka.com/2024/11/24/goodbye-wordpress/): The licensing disputes and Automattic’s reaction left a bad taste. After evaluating alternatives I’ve settled on Textpattern — and a new markup language to learn called Textile.
+- [WordCamp Ahmedabad 2023](https://kidakaka.com/2023/12/16/wordcamp-ahmedabad-2023/): After WordCamp Mumbai earlier in the year I decided to keep attending WordCamps across India. Ahmedabad came up quickly on the calendar, and I brought Harshaja along, hoping she would connect with WordPress agencies for 13 Llama’s development needs. The schedule looked genuinely compelling.
+- [How to Setup Microsoft Word to Post to WordPress](https://kidakaka.com/2023/09/09/how-to-setup-microsoft-word-to-post-to-wordpress/): WordPress’s Gutenberg editor offers a pleasant user experience similar to Medium, but I find it frustrating that advanced options have been quietly hidden in the pursuit of simplicity. After a year-long writing hiatus I discovered something worth sharing: Microsoft Word can publish directly to WordPress.
+- [Nitropack Review](https://kidakaka.com/2022/07/27/nitropack-review/): Those managing content management systems face a persistent challenge: improving site loading speed without adding complexity. Solutions range from server-side opcache modules to WordPress-specific tools like WP-Supercache. For non-technical webmasters, picking the right approach is genuinely difficult.
+- [18 Months Down the Line: What Has Google AMP Really Achieved?](https://kidakaka.com/2017/08/24/18-months-down-the-line-what-has-google-amp-really-achieved/): In early 2016, Google launched Accelerated Mobile Pages for publishers seeking faster content delivery on mobile. With 65% of Asian traffic occurring on mobile — particularly in developing nations where slower networks are the norm — the motivation made sense. The execution has been more complicated.
+- [IE8 — We Are Not the Devil Anymore](https://kidakaka.com/2008/03/08/ie8-we-are-not-the-devil-anymore/): Microsoft announced Internet Explorer 8 with a significant commitment: it would pass the Acid2 browser compatibility test in its default rendering mode. For web developers who had spent years cursing IE6 and its creative interpretations of CSS standards, this was news worth paying attention to.
+- [Firefox Reaches 500M](https://kidakaka.com/2008/02/22/firefox-reaches-500-m/): Firefox crossed 500 million downloads, and that number deserves a moment of appreciation. Not because download counts are a perfect metric — they are not — but because of what the number represents.
+
+## Core Site Navigation
+
+- [Homepage](https://kidakaka.com/): Latest blog posts, author tagline, and recent updates.
+- [Articles Archive](https://kidakaka.com/articles/): Chronological directory of all published essays from 2008 to present.
+- [Legal & Privacy Policy](https://kidakaka.com/legal/): Privacy policy for mobile apps (Word Blitz), content attribution, and personal disclaimer.
+- [Word Blitz Privacy Policy](https://kidakaka.com/legal/word-blitz-privacy/): Standalone privacy policy for Word Blitz application.
+
+## Categories & Topic Archives
+
+- [Technology](https://kidakaka.com/category/technology/): AI agents, software architecture, tools, and developer workflows.
+- [Work](https://kidakaka.com/category/work/): Engineering management, culture, team practices, and productivity.
+- [Business](https://kidakaka.com/category/business/): Fintech, micro-lending, startups, and platform economics.
+- [Analytics](https://kidakaka.com/category/analytics/): Data analytics, Google Analytics internals, reporting, and metrics.
+- [Web](https://kidakaka.com/category/web/): Web technologies, CMS architectures, Laravel, and performance.
+- [Life](https://kidakaka.com/category/life/): Personal reflections, marathons, and life lessons.
+- [Thoughts](https://kidakaka.com/category/thoughts/): Philosophy, social observations, and long-term perspectives.
+- [Personal](https://kidakaka.com/category/personal/): Personal updates, community events, and milestones.
+- [News](https://kidakaka.com/category/news/): Commentary on industry shifts and open-source updates.
+- [Sports](https://kidakaka.com/category/sports/): Marathon runs, fitness reflections, and sports essays.
+
+## Optional
+
+- [Complete Article Catalog (llms-full.txt)](https://kidakaka.com/llms-full.txt): Comprehensive index of all 94 articles (2008–2026) with detailed descriptions, dates, and categories.
+- [XML Sitemap](https://kidakaka.com/sitemap.xml): Machine-readable sitemap of all site URLs.
