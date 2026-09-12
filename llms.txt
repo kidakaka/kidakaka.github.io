@@ -79,6 +79,7 @@ Key topics and architectural patterns documented here include:
 
 - [Homepage](https://kidakaka.com/): Latest blog posts, author tagline, and recent updates.
 - [Articles Archive](https://kidakaka.com/articles/): Chronological directory of all published essays from 2008 to present.
+- [About](https://kidakaka.com/about/): Biographical overview of Prasad Ajinkya, engineering leadership across Homeville Group and Bharat Housing Network, and Manthan architecture.
 - [Legal & Privacy Policy](https://kidakaka.com/legal/): Privacy policy for mobile apps (Word Blitz), content attribution, and personal disclaimer.
 - [Word Blitz Privacy Policy](https://kidakaka.com/legal/word-blitz-privacy/): Standalone privacy policy for Word Blitz application.
 
