@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { formatDate, getPostUrl } from '../utils/format';
+
+const allPosts = await getCollection('posts');
+allPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+const postsByYear = new Map<string, typeof allPosts>();
+for (const post of allPosts) {
+  const year = post.data.year;
+  if (!postsByYear.has(year)) {
+    postsByYear.set(year, []);
+  }
+  postsByYear.get(year)!.push(post);
+}
+
+const years = Array.from(postsByYear.keys());
+---
+
+<BaseLayout title="Articles">
+  <main>
+    <h1 class="page-title">Articles</h1>
+
+    {years.map((year) => (
+      <div class="articles-year">
+        <h2>{year}</h2>
+        <ul>
+          {postsByYear.get(year)!.map((post) => (
+            <li>
+              <a href={getPostUrl(post)}>{post.data.title}</a>{' '}
+              <span class="post-date">{formatDate(post.data.date)}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </main>
+</BaseLayout>

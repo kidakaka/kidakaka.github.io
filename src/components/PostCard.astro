@@ -1,0 +1,33 @@
+---
+import { formatDate, formatCategory, getPostUrl } from '../utils/format';
+
+interface Props {
+  post: any;
+}
+
+const { post } = Astro.props;
+const url = getPostUrl(post);
+const formattedDate = formatDate(post.data.date);
+const categories = post.data.categories || [];
+---
+
+<li class="post-item">
+  <h2 class="post-title"><a href={url}>{post.data.title}</a></h2>
+  <div class="post-meta">
+    {formattedDate}
+    {categories.length > 0 && (
+      <>
+        &nbsp;&middot;&nbsp; 
+        <span class="cats">
+          {categories.map((cat: string, index: number) => (
+            <>
+              <a href={`/category/${cat}/`}>{formatCategory(cat)}</a>
+              {index < categories.length - 1 && ', '}
+            </>
+          ))}
+        </span>
+      </>
+    )}
+  </div>
+  {post.data.excerpt && <p class="post-excerpt">{post.data.excerpt}</p>}
+</li>

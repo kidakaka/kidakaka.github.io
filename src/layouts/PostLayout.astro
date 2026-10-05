@@ -1,0 +1,66 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { formatDate, formatCategory, getPostUrl } from '../utils/format';
+
+interface Props {
+  post: any;
+  prevPost?: any;
+  nextPost?: any;
+}
+
+const { post, prevPost, nextPost } = Astro.props;
+const { title, date, categories = [], image, imageAlt, excerpt } = post.data;
+const formattedDate = formatDate(date);
+---
+
+<BaseLayout
+  title={title}
+  description={excerpt}
+  image={image}
+  articleDate={date}
+  type="article"
+>
+  <main>
+    <article>
+      <div class="post-header">
+        <h1>{title}</h1>
+        <div class="post-meta">
+          {formattedDate}
+          {categories.length > 0 && (
+            <>
+              &nbsp;&middot;&nbsp; 
+              <span class="cats">
+                {categories.map((cat: string, index: number) => (
+                  <>
+                    <a href={`/category/${cat}/`}>{formatCategory(cat)}</a>
+                    {index < categories.length - 1 && ', '}
+                  </>
+                ))}
+              </span>
+            </>
+          )}
+        </div>
+      </div>
+
+      <div class="post-body">
+        {image && <img src={image} alt={imageAlt || title} class="post-image" />}
+        <slot />
+      </div>
+
+      {(prevPost || nextPost) && (
+        <nav class="post-nav">
+          {prevPost && (
+            <a class="nav-prev" href={getPostUrl(prevPost)}>
+              &larr; {prevPost.data.title}
+            </a>
+          )}
+          {nextPost && (
+            <a class="nav-next" href={getPostUrl(nextPost)}>
+              {nextPost.data.title} &rarr;
+            </a>
+          )}
+        </nav>
+      )}
+    </article>
+  </main>
+</BaseLayout>

@@ -1,0 +1,18 @@
+---
+interface Props {
+  currentPage: number;
+  lastPage: number;
+  prevUrl?: string;
+  nextUrl?: string;
+}
+
+const { currentPage, prevUrl, nextUrl } = Astro.props;
+const cleanPrevUrl = prevUrl ? (currentPage === 2 ? '/' : prevUrl) : undefined;
+---
+
+{(cleanPrevUrl || nextUrl) && (
+  <nav class="pagination">
+    {cleanPrevUrl && <a class="prev-page" href={cleanPrevUrl}>&larr; Newer Posts</a>}
+    {nextUrl && <a class="next-page" href={nextUrl}>Older Posts &rarr;</a>}
+  </nav>
+)}

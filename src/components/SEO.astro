@@ -1,0 +1,78 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  articleDate?: string;
+  type?: 'website' | 'article';
+  canonicalUrl?: string;
+}
+
+const {
+  title = "The Big Fat Geek",
+  description = "Personal blog of Prasad Ajinkya — software architect, engineering leader, and author documenting telemetry from AI workloads, distributed systems, and fintech.",
+  image,
+  articleDate,
+  type = "website",
+  canonicalUrl = Astro.url.href,
+} = Astro.props;
+
+const siteTitle = title === "The Big Fat Geek" ? title : `${title} | The Big Fat Geek`;
+const siteUrl = "https://kidakaka.com";
+const resolvedImage = image ? (image.startsWith('http') ? image : `${siteUrl}${image}`) : undefined;
+---
+
+<title>{siteTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:site_name" content="The Big Fat Geek" />
+{resolvedImage && <meta property="og:image" content={resolvedImage} />}
+{articleDate && <meta property="article:published_time" content={articleDate} />}
+{articleDate && <meta property="article:author" content="Prasad Ajinkya" />}
+
+<!-- Twitter -->
+<meta name="twitter:card" content={resolvedImage ? "summary_large_image" : "summary"} />
+<meta name="twitter:site" content="@kidakaka" />
+<meta name="twitter:creator" content="@kidakaka" />
+<meta name="twitter:url" content={canonicalUrl} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+{resolvedImage && <meta name="twitter:image" content={resolvedImage} />}
+
+<!-- RSS feed auto-discovery -->
+<link rel="alternate" type="application/rss+xml" title="The Big Fat Geek" href="/rss.xml" />
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9833220184772142" crossorigin="anonymous"></script>
+
+<!-- Structured Data -->
+{type === 'article' && (
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": title,
+    "description": description,
+    "image": resolvedImage,
+    "datePublished": articleDate,
+    "author": {
+      "@type": "Person",
+      "name": "Prasad Ajinkya",
+      "url": "https://kidakaka.com/about/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Big Fat Geek",
+      "url": "https://kidakaka.com"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalUrl
+    }
+  })} />
+)}
