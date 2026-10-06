@@ -1,0 +1,21 @@
+---
+import { formatDate, getPostUrl } from '../utils/format';
+
+interface Props {
+  post: any;
+}
+
+const { post } = Astro.props;
+const url = getPostUrl(post);
+const formattedDate = formatDate(post.data.date);
+---
+
+<a href={url} class="featured-card">
+  <div class="featured-card-image-wrapper">
+    <img src={post.data.image} alt={post.data.imageAlt || post.data.title} class="featured-card-image" />
+  </div>
+  <div class="featured-card-body">
+    <h3 class="featured-card-title">{post.data.title}</h3>
+    <div class="featured-card-meta">{formattedDate}</div>
+  </div>
+</a>

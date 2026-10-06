@@ -1,0 +1,52 @@
+---
+import { formatDate, formatCategory, getPostUrl } from '../utils/format';
+
+interface Props {
+  post: any;
+}
+
+const { post } = Astro.props;
+const url = getPostUrl(post);
+const formattedDate = formatDate(post.data.date);
+const categories = post.data.categories || [];
+---
+
+{post.data.image ? (
+  <article class="featured-hero">
+    <a href={url} class="hero-link">
+      <img src={post.data.image} alt={post.data.imageAlt || post.data.title} class="hero-image" />
+      <div class="hero-overlay">
+        <span class="hero-label">Latest</span>
+        <h2 class="hero-title">{post.data.title}</h2>
+        <div class="hero-meta">
+          {formattedDate}
+          {categories.length > 0 && (
+            <> &middot; {categories.map((cat: string) => formatCategory(cat)).join(', ')}</>
+          )}
+        </div>
+      </div>
+    </a>
+  </article>
+) : (
+  <article class="featured-hero featured-hero--text">
+    <span class="hero-label">Latest</span>
+    <h2 class="post-title"><a href={url}>{post.data.title}</a></h2>
+    <div class="post-meta">
+      {formattedDate}
+      {categories.length > 0 && (
+        <>
+          &nbsp;&middot;&nbsp;
+          <span class="cats">
+            {categories.map((cat: string, index: number) => (
+              <>
+                <a href={`/category/${cat}/`}>{formatCategory(cat)}</a>
+                {index < categories.length - 1 && ', '}
+              </>
+            ))}
+          </span>
+        </>
+      )}
+    </div>
+    {post.data.excerpt && <p class="post-excerpt">{post.data.excerpt}</p>}
+  </article>
+)}

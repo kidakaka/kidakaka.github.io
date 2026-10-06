@@ -1,6 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FeaturedHero from '../components/FeaturedHero.astro';
+import FeaturedCard from '../components/FeaturedCard.astro';
 import PostCard from '../components/PostCard.astro';
 import Pagination from '../components/Pagination.astro';
 
@@ -8,17 +10,50 @@ const allPosts = await getCollection('posts');
 allPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 
 const PAGE_SIZE = 10;
-const posts = allPosts.slice(0, PAGE_SIZE);
+const firstPagePosts = allPosts.slice(0, PAGE_SIZE);
+
+// Hero: always the latest post
+const heroPost = firstPagePosts[0];
+
+// Featured cards: up to 2 posts with images from the remaining first-page posts
+const featuredCards: typeof firstPagePosts = [];
+const listPosts: typeof firstPagePosts = [];
+
+for (const post of firstPagePosts.slice(1)) {
+  if (featuredCards.length < 2 && post.data.image) {
+    featuredCards.push(post);
+  } else {
+    listPosts.push(post);
+  }
+}
+
 const hasNext = allPosts.length > PAGE_SIZE;
 ---
 
 <BaseLayout>
   <main>
-    <ul class="post-list">
-      {posts.map((post) => (
-        <PostCard post={post} />
-      ))}
-    </ul>
+    <FeaturedHero post={heroPost} />
+
+    {featuredCards.length > 0 && (
+      <div class="featured-cards-grid">
+        {featuredCards.map((post) => (
+          <FeaturedCard post={post} />
+        ))}
+      </div>
+    )}
+
+    {listPosts.length > 0 && (
+      <>
+        {featuredCards.length > 0 && (
+          <div class="more-posts-divider">More Posts</div>
+        )}
+        <ul class="post-list">
+          {listPosts.map((post) => (
+            <PostCard post={post} />
+          ))}
+        </ul>
+      </>
+    )}
 
     {hasNext && (
       <Pagination
