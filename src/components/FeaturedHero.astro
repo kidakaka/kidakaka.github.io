@@ -14,15 +14,22 @@ const categories = post.data.categories || [];
 {post.data.image ? (
   <article class="featured-hero">
     <a href={url} class="hero-link">
-      <img src={post.data.image} alt={post.data.imageAlt || post.data.title} class="hero-image" />
-      <div class="hero-overlay">
-        <span class="hero-label">Latest</span>
-        <h2 class="hero-title">{post.data.title}</h2>
-        <div class="hero-meta">
-          {formattedDate}
-          {categories.length > 0 && (
-            <> &middot; {categories.map((cat: string) => formatCategory(cat)).join(', ')}</>
-          )}
+      <div class="hero-image-wrapper">
+        <img
+          src={post.data.image}
+          alt={post.data.imageAlt || post.data.title}
+          class="hero-image"
+          loading="eager"
+        />
+        <div class="hero-overlay">
+          <span class="hero-label">Latest</span>
+          <h2 class="hero-title">{post.data.title}</h2>
+          <div class="hero-meta">
+            {formattedDate}
+            {categories.length > 0 && (
+              <> &middot; {categories.map((cat: string) => formatCategory(cat)).join(', ')}</>
+            )}
+          </div>
         </div>
       </div>
     </a>
