@@ -9,6 +9,8 @@ categories:
   - "technology"
   - "work"
 excerpt: "We spent months proving that autonomous coding agents do not need black-box vector databases—they need deterministic version control. Today, we are open-sourcing @kidakaka/manthan-mcp on npm: a commercial-grade, Git-native memory engine for Claude Code, Cursor, and Antigravity."
+image: "/images/manthan_mcp_banner.jpg"
+imageAlt: "Memory-as-Code: Why We Open-Sourced Manthan MCP"
 ---
 
 Across the software engineering landscape in late 2026, autonomous coding agents have graduated from autocomplete curiosities into genuine junior-to-mid-level contributors. Whether you are running Anthropic’s Claude Code, Cursor, Windsurf, or Google Antigravity, the raw reasoning throughput of frontier models is no longer the bottleneck. 
