@@ -1087,6 +1087,301 @@ footer a:hover {
   }
 }
 
+/* ===========================================
+   Books & Antariksh Fiction Showcase
+   =========================================== */
+.books-hero {
+  margin-bottom: 44px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 28px;
+}
+
+.books-hero-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.books-hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 4.5vw, 40px);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--heading);
+  margin-bottom: 14px;
+}
+
+.books-hero p {
+  font-size: 18px;
+  line-height: 1.68;
+  color: var(--text-secondary);
+  max-width: 720px;
+  margin: 0;
+}
+
+.books-section-title {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+  margin: 48px 0 28px;
+}
+
+/* Featured Book Card */
+.book-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 32px;
+  margin-bottom: 36px;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 36px;
+  align-items: start;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.book-card.featured {
+  border-color: var(--accent);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.book-cover-wrap {
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  background: var(--border);
+  line-height: 0;
+}
+
+.book-cover-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+.book-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.book-series-tag {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.book-title {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 3.2vw, 30px);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--heading);
+  letter-spacing: -0.015em;
+  margin: 0 0 8px 0;
+}
+
+.book-subtitle {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+
+.book-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.book-badge {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.book-badge.available {
+  background: #e6f4ea;
+  color: #137333;
+}
+
+.book-badge.upcoming {
+  background: #feefe3;
+  color: #b06000;
+}
+
+.book-badge.companion {
+  background: #f3e8fd;
+  color: #7627bb;
+}
+
+@media (prefers-color-scheme: dark) {
+  .book-card.featured {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  }
+  .book-badge.available {
+    background: #133924;
+    color: #81c995;
+  }
+  .book-badge.upcoming {
+    background: #3c2415;
+    color: #fdd663;
+  }
+  .book-badge.companion {
+    background: #331d48;
+    color: #d7aefb;
+  }
+}
+
+.book-blurb {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.book-blurb p {
+  margin-bottom: 12px;
+}
+
+.book-quote {
+  font-style: italic;
+  border-left: 3px solid var(--accent);
+  padding-left: 14px;
+  margin: 16px 0;
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.book-actions {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.book-action-label {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  width: 100%;
+  margin-bottom: 2px;
+}
+
+.btn-amazon {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.15s ease;
+}
+
+.btn-amazon-primary {
+  background: var(--heading);
+  color: var(--bg) !important;
+  border: 1px solid var(--heading);
+}
+
+.btn-amazon-primary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.btn-amazon-secondary {
+  background: transparent;
+  color: var(--heading) !important;
+  border: 1px solid var(--border);
+}
+
+.btn-amazon-secondary:hover {
+  border-color: var(--heading);
+  color: var(--heading) !important;
+  text-decoration: none !important;
+}
+
+/* Secondary Upcoming Grid */
+.books-grid-secondary {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 28px;
+  margin-bottom: 48px;
+}
+
+.book-card-mini {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card-mini .book-cover-wrap {
+  margin-bottom: 18px;
+}
+
+.book-card-mini .book-title {
+  font-size: 21px;
+  margin-bottom: 4px;
+}
+
+.book-card-mini .book-blurb {
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 680px) {
+  .book-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .book-cover-wrap {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+}
+
 /* ---- Print Stylesheet ---- */
 @media print {
   body {
