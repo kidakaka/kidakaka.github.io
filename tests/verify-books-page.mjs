@@ -22,6 +22,13 @@ assert(booksHtml.includes('https://www.amazon.in/dp/B0HJNSGV6L'), 'Must contain 
 assert(booksHtml.includes('target="_blank"'), 'Must have target="_blank" on external links');
 assert(booksHtml.includes('rel="noopener noreferrer"'), 'Must have rel="noopener noreferrer" on external links');
 
+// 2b. Check accessibility & semantic hierarchy
+console.log('✓ Checking accessibility and semantic hierarchy...');
+assert(booksHtml.includes('width="600"') && booksHtml.includes('height="900"'), 'img tags must specify width="600" and height="900"');
+assert(booksHtml.includes('<h2 class="books-section-title">'), 'Section title must be an h2 heading for semantic hierarchy');
+assert(booksHtml.includes('<blockquote class="book-quote">'), 'Book quote must use semantic blockquote');
+assert(booksHtml.includes('/images/books/the-shackleton-ice-rush.jpg"'), 'Social preview image must be present in books metadata');
+
 // 3. Check Book Titles and series mentions
 console.log('✓ Checking book titles and universe details...');
 assert(booksHtml.includes('The Shackleton Ice Rush'), 'Must include Book 1 title');
@@ -30,7 +37,7 @@ assert(booksHtml.includes('The Antariksha Sovereign'), 'Must include Book 3 titl
 assert(booksHtml.includes('The Gravity Between Us'), 'Must include companion novella title');
 assert(booksHtml.includes('ISRO-punk') || booksHtml.includes('ISRO-Punk') || booksHtml.includes('&ldquo;ISRO-punk&rdquo;'), 'Must mention ISRO-punk subgenre');
 
-// 4. Check image assets copied to dist/
+// 4. Check image assets copied to dist/ and size optimization (< 400KB each)
 console.log('✓ Checking book cover image assets in dist/images/books/...');
 const images = [
   'the-shackleton-ice-rush.jpg',
@@ -43,7 +50,7 @@ for (const img of images) {
   const imgPath = path.join(DIST_DIR, 'images', 'books', img);
   assert(fs.existsSync(imgPath), `dist/images/books/${img} must exist`);
   const stat = fs.statSync(imgPath);
-  assert(stat.size > 100000, `dist/images/books/${img} size (${stat.size} bytes) must be > 100KB`);
+  assert(stat.size > 20000 && stat.size < 400000, `dist/images/books/${img} size (${stat.size} bytes) must be optimized (<400KB)`);
   assert(booksHtml.includes(`/images/books/${img}`), `books/index.html must reference /images/books/${img}`);
 }
 

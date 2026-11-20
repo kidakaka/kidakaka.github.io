@@ -1223,20 +1223,26 @@ footer a:hover {
   letter-spacing: 0.05em;
   padding: 3px 8px;
   border-radius: 4px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
 }
 
 .book-badge.available {
   background: #e6f4ea;
+  border-color: transparent;
   color: #137333;
 }
 
 .book-badge.upcoming {
   background: #feefe3;
-  color: #b06000;
+  border-color: transparent;
+  color: #9c4f00;
 }
 
 .book-badge.companion {
   background: #f3e8fd;
+  border-color: transparent;
   color: #7627bb;
 }
 
