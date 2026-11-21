@@ -38,6 +38,7 @@ const cssContent = fs.readFileSync(distCssPath, 'utf8');
 assert(cssContent.includes('.book-mini-content'), 'dist/style.css must contain .book-mini-content');
 assert(cssContent.includes('180px 1fr'), 'dist/style.css must configure featured book with 180px column');
 assert(cssContent.includes('100px 1fr'), 'dist/style.css must configure secondary book card with 100px column');
+assert(cssContent.includes('.book-cover-wrap::after'), 'dist/style.css must use .book-cover-wrap::after for spine highlight overlay');
 
 // 3. Check Book Titles and series mentions
 console.log('✓ Checking book titles and universe details...');

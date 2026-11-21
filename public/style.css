@@ -1157,13 +1157,23 @@ footer a:hover {
 }
 
 .book-cover-wrap {
+  position: relative;
   width: 100%;
   border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14), inset 2px 0 3px rgba(255, 255, 255, 0.18);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
   border: 1px solid rgba(0, 0, 0, 0.08);
   background: var(--border);
   line-height: 0;
+}
+
+.book-cover-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 2px 0 3px rgba(255, 255, 255, 0.22), inset -1px 0 2px rgba(0, 0, 0, 0.08);
+  pointer-events: none;
 }
 
 .book-cover-img {
@@ -1253,7 +1263,10 @@ footer a:hover {
   }
   .book-cover-wrap {
     border-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45), inset 1px 0 2px rgba(255, 255, 255, 0.12);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  }
+  .book-cover-wrap::after {
+    box-shadow: inset 1px 0 2px rgba(255, 255, 255, 0.15), inset -1px 0 2px rgba(0, 0, 0, 0.3);
   }
   .book-badge.available {
     background: #133924;
@@ -1401,6 +1414,10 @@ footer a:hover {
 }
 
 .book-card-mini .book-blurb p {
+  margin-bottom: 8px;
+}
+
+.book-card-mini .book-blurb p:last-child {
   margin-bottom: 0;
 }
 
@@ -1425,6 +1442,7 @@ footer a:hover {
   .book-card-mini .book-cover-wrap {
     width: 85px;
     max-width: 85px;
+    margin: 0;
   }
 
   .book-card-mini .book-title {
