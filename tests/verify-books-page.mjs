@@ -29,6 +29,16 @@ assert(booksHtml.includes('<h2 class="books-section-title">'), 'Section title mu
 assert(booksHtml.includes('<blockquote class="book-quote">'), 'Book quote must use semantic blockquote');
 assert(booksHtml.includes('/images/books/the-shackleton-ice-rush.jpg"'), 'Social preview image must be present in books metadata');
 
+// 2c. Check horizontal layout & thumbnail styling structure
+console.log('✓ Checking books layout and thumbnail markup structure...');
+assert(booksHtml.includes('class="book-mini-content"'), 'Must contain .book-mini-content wrapping secondary card text elements');
+const distCssPath = path.join(DIST_DIR, 'style.css');
+assert(fs.existsSync(distCssPath), 'dist/style.css must exist');
+const cssContent = fs.readFileSync(distCssPath, 'utf8');
+assert(cssContent.includes('.book-mini-content'), 'dist/style.css must contain .book-mini-content');
+assert(cssContent.includes('180px 1fr'), 'dist/style.css must configure featured book with 180px column');
+assert(cssContent.includes('100px 1fr'), 'dist/style.css must configure secondary book card with 100px column');
+
 // 3. Check Book Titles and series mentions
 console.log('✓ Checking book titles and universe details...');
 assert(booksHtml.includes('The Shackleton Ice Rush'), 'Must include Book 1 title');
